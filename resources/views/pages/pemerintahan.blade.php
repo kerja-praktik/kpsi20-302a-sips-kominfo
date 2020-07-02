@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'table', 'title' => 'Light Bootstrap Dashboard Laravel by Creative Tim & UPDIVISION', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'table', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -16,8 +16,10 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                    
-                    <a class="dropdown-item" href="{{route('page.index', 'pemerintahan')}}">Jumlah Desa dan Kelurahan Menurut Kecamatan Kabupaten Toba Samosir</a>
-                    <a class="dropdown-item" href="{{route('page.index', 'pemerintahan')}}">Jumlah Akta Kelahiran, Perkawinan, Perceraian, dan E-KTP menurut Kecamatan Tahun 2018</a>
+                    <a class="dropdown-item" href="{{route('page.index', 'pemerintahan')}}">Jumlah Desa dan Kelurahan Menurut Kecamatan</a>
+                 
+                   
+                        <a class="dropdown-item" href="{{route('page.index', 'table')}}">Jumlah Penduduk, Luas Wilayah, dan Kepadatan Penduduk</a>
            
                         <!-- <div class="divider"></div>
                         <a class="dropdown-item" href="#">{{ __('Separated link') }}</a> -->
