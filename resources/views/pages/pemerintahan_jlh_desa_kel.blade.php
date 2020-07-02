@@ -35,9 +35,11 @@
 
 
                             <!-- <p class="card-category">Here is a subtitle for this table</p> -->
-                            <form action="/pemerintahan/cari" method="GET">
-                                <input type="text" name="cari" placeholder="Cari kecamatan .." value="{{ old('cari') }}">
-                                <input type="submit" value="CARI">
+                            <form action="/pemerintahan_jlh_desa_kel" method ="GET" class="header_search_form clearfix">
+                                        <input type="text" name="cari" id="query" value="{{ request()->input('search') }}" required="required" 
+                                        class="header_search_input" placeholder="Search product...">
+                                        <button type="submit" class="header_search_button trans_300" value="Submit">
+                                            <i class="fas fa-search" style="font-size:20px"></i></button>
                             </form>
 
                     
