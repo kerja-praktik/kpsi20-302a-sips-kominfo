@@ -54,7 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('edit2/{id}','PemerintahanController@edit2');
 	Route::put('/update2/{id}','PemerintahanController@update2');
 
-
 	//infrastruktur
 	Route::get('{page_infrastruktur}', ['as' => 'page.infrastruktur', 'uses' => 'InfrastrukturController@index']);
 
@@ -139,8 +138,8 @@ Route::group(['middleware' => 'auth'], function () {
 	//search
 	Route::any ('/search', function(Request $request){
 		$search = $request->search;
-		$products=Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$search.'%')->orWhere('kecamatan', 'LIKE', '%'.$search.'%')->get();
-		return view('pages.index')->withDetails($products)->withQuery($search);
+		$tbl43=Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$search.'%')->get();
+		return view('pages.pemerintahan_jlh_desa_kel')->withDetails($tbl43)->withQuery($search);
 	});
 
 	

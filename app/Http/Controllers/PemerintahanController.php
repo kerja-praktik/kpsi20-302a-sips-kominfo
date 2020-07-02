@@ -56,67 +56,13 @@ class PemerintahanController extends Controller
             $data44c[] = $tabel44b->Jlh_Penduduk/$tabel44b->Luas_Wilayah;
         }
        
-        // $tbl45=DB::table('infrastruktur-aplikasiopdtoba')->paginate(10);
-        // $tbl46=DB::table('infrastruktur-panjangjalan')->paginate(10);
-        // $tbl47=DB::table('infrastruktur-panjangjalankabupaten')->paginate(10);
-        // $jumlah_panjang_jalan=0;
-        // foreach ($tbl47 as $tabel47){
-        //     $jumlah_panjang_jalan+=$tabel47->panjang_jalan;
-        // }
-        // $categories47 = [];
-        // $data47a = [];
-        // foreach ($tbl47 as $tabel44b){
-        //     $categories47[] = $tabel44b->kecamatan;
-        //     $data47a[] = $tabel44b->panjang_jalan;
-        // }
-
-
-        // $tbl48=DB::table('infrastruktur-jembatan')->paginate(10);
-        // $categories48 = [];
-        // $data48a = [];
-        // foreach ($tbl48 as $tabel44b){
-        //     $categories48[] = $tabel44b->keadaan;
-        //     $data48a[] = $tabel44b->jumlah_jembatan;
-        // }
-        // $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
-        // $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
-        // $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        // $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
-        // $categories51 = [];
-        // $data51a = [];
-        // $data51b = [];
-        // $data51c = [];
-        // foreach ($tbl51a as $tabel44b){
-        //     $categories51[] = $tabel44b->kecamatan;
-        //     $data51a[] = $tabel44b->alokasi_dasar;
-        //     $data51b[] = $tabel44b->alokasi_formula;
-        //     $data51c[] = $tabel44b->alokasi_dasar+$tabel44b->alokasi_formula;
-        // }
-        // $tbl52=DB::table('infrastruktur-perhitungan_dana_desa')->orderBy('kecamatan','asc')->paginate(10);
-        // $tbl53=DB::table('infrastruktur-perhitungan_dana_desa')->orderBy('kecamatan','asc')->paginate(10);
        
-        // $jumlah_alokasi_formula=0;
-        // foreach ($tbl52 as $tabel52){
-        //     $jumlah_alokasi_formula+=$tabel52->alokasi_formula;
-        // }
-
-        // $jumlah_pengguna_dana_desa=0;
-        // foreach ($tbl52 as $tabel53a){
-        //     $jumlah_pengguna_dana_desa=$tabel53a->alokasi_formula+$tabel53a->alokasi_dasar;
-        // }
-        
-        // $categories52 = [];
-        // $data52a = [];
-        // $data52b = [];
-        // $data52c = [];
-        // foreach ($tbl52 as $tabel44b){
-        //     $categories52[] = $tabel44b->kecamatan;
-        //     $data52a[] = $tabel44b->alokasi_dasar;
-        //     $data52b[] = $tabel44b->alokasi_formula;
-        //     $data52c[] = $tabel44b->alokasi_dasar+$tabel44b->alokasi_formula;
-        // }
-
-
+        if($request->has('cari')){
+            $jlh_desa_kel = \App\Model_pemerintahan_jlh_desa_kel::where('p_name','LIKE','%'.$request->cari.'%')->
+            orwhere('p_code','LIKE','%'.$request->cari.'%')->get();
+        }else{
+         $jlh_desa_kel=Model_pemerintahan_jlh_desa_kel::all();
+        }
         if (view()->exists("pages.{$page_pemerintahan}")) {
             return view("pages.{$page_pemerintahan}",  compact('tbl44c','data43a','data43b','data44c','data44a',
             'data44b','categories43','categories44', 'jumlah_total','jumlah_kelurahan',
