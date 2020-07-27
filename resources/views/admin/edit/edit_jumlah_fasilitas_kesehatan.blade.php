@@ -1,7 +1,24 @@
-@extends('layouts.app', ['activePage' => 'formulir_jumlah_akta', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'edit_jumlah_fasilitas_kesehatan', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
+            @if(session('error'))
+            <div class="alert alert-error">
+            {{ session('error') }}
+            </div>
+            @endif
+
+            @if(count($errors) > 0)
+            <div class="alert alert-danger">
+            <strong>Perhatian !!!</strong>
+            <br>
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            </div>
+            @endif
         <div class="container-fluid">
             <div class="section-image">
                 <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
@@ -11,129 +28,111 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h3 class="mb-0">{{ __('Tambahkan Data') }}</h3>
+                                    <h4 class="mb-0">{{ __('Jumlah Fasilitas Kesehatan Menurut Kecamatan') }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="{{url('/update27',$tabel27->id)}}" method="post" class="account-form">                   
+                        <form action="{{url('/update_status27',$tabel27->id)}}" method="post" class="account-form">                   
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type = "hidden" name = "status" value = "Requested">
                         {{method_field('PUT')}}
-                                
-                                <h6 class="heading-small text-muted mb-4">{{ __('Jumlah Fasilitas Kesehatan Menurut Kecamatan') }}</h6>
-                                <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Kecamatan') }}
-                                        </label>
-                                        <input type="text" name="kecamatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Kecamatan') }}" value="{{ $tabel27->kecamatan}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Rumah Sakit') }}
-                                        </label>
-                                        <input type="text" name="rumah_sakit" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Rumah Sakit') }}" value="{{ $tabel27->rumah_sakit}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Rumah Bersalin') }}
-                                        </label>
-                                        <input type="text" name="rumah_bersalin" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Rumah Bersalin') }}" value="{{ $tabel27->rumah_bersalin}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Puskesmas') }}
-                                        </label>
-                                        <input type="text" name="puskesmas" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Puskesmas') }}" value="{{ $tabel27->puskesmas}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Puskesmas Pembantu') }}
-                                        </label>
-                                        <input type="text" name="puskesmas_pembantu" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Puskesmas Pembantu') }}" value="{{ $tabel27->puskesmas_pembantu}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Poskesdes') }}
-                                        </label>
-                                        <input type="text" name="poskesdes" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Poskesdes') }}" value="{{ $tabel27->poskesdes}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Balai Kesehatan') }}
-                                        </label>
-                                        <input type="text" name="balai_kesehatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Balai Kesehatan') }}" value="{{ $tabel27->balai_kesehatan}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Polindes') }}
-                                        </label>
-                                        <input type="text" name="polindes" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Polindes') }}" value="{{ $tabel27->polindes}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Apotek') }}
-                                        </label>
-                                        <input type="text" name="apotek" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Apotek') }}" value="{{ $tabel27->apotek}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Toko Obat') }}
-                                        </label>
-                                        <input type="text" name="toko_obat" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Toko Obat') }}" value="{{ $tabel27->toko_obat}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Tahun') }}
-                                        </label>
-                                        <input type="text" name="tahun" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Tahun') }}" value="{{ $tabel27->tahun}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
-                                    </div>
-                                </div>
+                               
+                                <table  class="table table-borderless">
+                                        <thead>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Kecamatan</th>
+                                                <td>{{ $tabel27->kecamatan }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Rumah Sakit</th>
+                                                <td>{{ $tabel27->rumah_sakit }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rumah Bersalin</th>
+                                                <td>{{ $tabel27->rumah_bersalin }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Puskesmas</th>
+                                                <td>{{ $tabel27->puskesmas}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Puskesmas Pembantu</th>
+                                                <td>{{ $tabel27->puskesmas_pembantu}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Poskesdes</th>
+                                                <td>{{ $tabel27->poskesdes}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Balai Kesehatan</th>
+                                                <td>{{ $tabel27->balai_kesehatan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Polindes</th>
+                                                <td>{{ $tabel27->polindes}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Apotek</th>
+                                                <td>{{ $tabel27->apotek}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Toko Obat</th>
+                                                <td>{{ $tabel27->toko_obat}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Tahun</th>
+                                                <td>{{ $tabel27->tahun }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Status</th>
+                                                <td>{{ $tabel27->status}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+    
                             </form>
                             <hr class="my-4" />
                             
                         </div>
-                    </div>
+        @if($tabel27->status=='Requested')
+        <div class="footer"> 
+        <div class="col-md-4">
+            <form action="/kesehatan_jumlah_fasilitas_kesehatan/{{$tabel27->id}}/accept27" method="post" class="d-inline">
+            @method('patch')
+             @csrf
+            <button type="submit" class="btn  btn-primary">Accept</button>
+            </form>
 
-                   
+            <form action="/kesehatan_jumlah_fasilitas_kesehatan/{{$tabel27->id}}/reject27" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+            <button type="submit" class="btn  btn-danger">Reject</button>
+            </form>
+        </div>
+        @elseif($tabel27->status=='Accepted')
+        <div class="col-md-5">
+        <button type="submit" class="btn  btn-primary disabled"> <b> Sudah Di Accepted </b></button>
+        <form action="/kesehatan_jumlah_fasilitas_kesehatan/{{$tabel27->id}}/reject27" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+        <button type="submit" class="btn  btn-danger">Reject</button>
+        </form>
+        <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        </div>
+        @else
+        <div class="col-md-4">
+        <button type="submit" class="btn  btn-danger disabled"> <b>Data di Reject </b></button>
+            <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        @endif
+        </div>
+    
+                </div>
+
                 </div>
             </div>
-        </div>
-    </div>
+       
+    
 @endsection                           

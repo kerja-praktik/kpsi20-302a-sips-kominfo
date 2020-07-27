@@ -36,14 +36,7 @@ use PDF;
 class PendidikanController extends Controller
 {
 
-     
-
-    
-     
-
-     
-
-public function edit39($id)
+    public function edit39($id)
     {
             $tabel39 = pendidikanpaud::FindOrFail($id);
             return view('pages.edit.pendidikanedit',compact('tabel39'));
@@ -56,7 +49,7 @@ public function edit39($id)
         return $pdf->download('pendidikanpaud.pdf');
     }
 
-public function update39(Request $request, $id){
+    public function update39(Request $request, $id){
         $this->validate($request,[ 
             'kecamatan'=>'required',
             'jumlah_paud'=>'required',
@@ -114,23 +107,23 @@ public function hapus40($id)
 	return redirect('/pendidikansd');
 }
 
-    public function formulir8(){
-            return view("pages.formulir-pendidikan-sd");
+public function formulir8(){
+    return view("pages.formulir-pendidikan-sd");
 }
 
-    public function tambah8(Request $request)
-    {
+public function tambah8(Request $request)
+{
         pendidikansd::create(['jumlah_sd'=> $request->jumlah_sd, 'kecamatan' => $request->kecamatan,
         'jumlah_guru' => $request->jumlah_guru, 'jumlah_murid'=>$request->jumlah_murid,'negeri'=>$request->negeri
         ,'swasta'=>$request->swasta,'Madrasah_Ibtidaiyah_Tsanawiyah'=>$request->Madrasah_Ibtidaiyah_Tsanawiyah,
         'tahun'=>$request->tahun]);
         return back()->withStatus(__('Data Berhasil Disimpan'));
-    }
+}
 public function edit40($id)
-    {
+{
             $tabel40 = pendidikansd::FindOrFail($id);
             return view('pages.edit.pendidikaneditsd',compact('tabel40'));
-    }
+}
 
 public function update40(Request $request, $id){
         $this->validate($request,[ 
@@ -157,9 +150,10 @@ public function update40(Request $request, $id){
             'status'=>$input_data['status']]);
         return redirect('/pendidikansd')->with('message','Update already Update!');
     }
+
     public function formulir9(){
             return view("pages.formulir-pendidikan-sltp");
-}
+    }
 
     public function tambah9(Request $request)
     {
@@ -171,10 +165,10 @@ public function update40(Request $request, $id){
     }
 
     public function hapus41($id)
-{
+    {
 	DB::table('pendidikan_sltp')->where('id',$id)->delete();
 	return redirect('/pendidikansltp');
-}
+    }
 public function edit41($id)
     {
             $tabel41 = pendidikansltp::FindOrFail($id);
@@ -1340,14 +1334,15 @@ public function update41(Request $request, $id){
         }
         //pendidikan
         $tbl39=DB::table('pendidikan_paud')->paginate(10);
- $categories39 = [];
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -1383,14 +1378,15 @@ public function update41(Request $request, $id){
         }
 
         $tbl40=DB::table('pendidikan_sd')->paginate(10);
-       $categories40 = [];
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
         $data40c = [];
         $data40d = [];
         $data40e = [];
-        foreach ($tbl40 as $tabel40a){
+        foreach ($tbl40a as $tabel40a){
             $categories40[] = $tabel40a->kecamatan;
             $data40[] = $tabel40a->jumlah_sd;
             $data40a[] = $tabel40a->jumlah_guru;
@@ -1436,6 +1432,7 @@ public function update41(Request $request, $id){
 
 
         $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -1474,7 +1471,6 @@ public function update41(Request $request, $id){
         $jumlahsltp5=0;
         foreach ($tbl41 as $tabel41e){
             $jumlahsltp5+=$tabel41e->Madrasah_Ibtidaiyah_Tsanawiyah;}
-
 
         //pemerintahan dan infrastrukur
 
@@ -1591,9 +1587,7 @@ public function update41(Request $request, $id){
             $data52c[] = $tabel52->alokasi_dasar+$tabel52->alokasi_formula;
         }
 
-     
 
-        
             return view("pages.pendidikansd",  compact('tbl1', 'jumlah1', 'i', 'tbl2', 'jumlah2', 'tbl3', 'jumlah3', 'tbl4', 'jumlah4', 'tbl5', 'jumlah5', 'tbl6', 'jumlah6', 'tbl7', 'jumlah7','tbl8', 'jumlah8', 
             'tbl9', 'jumlah9', 'jumlah10', 'jumlah11', 'tbl10', 'tbl11', 'tbl12', 'tbl13', 'tbl14', 'tbl15', 'tbl16', 'tbl17', 'tbl18', 'jumlah12', 'jumlah13', 'jumlah14', 'jumlah15', 
             'jumlah16', 'tbl16a', 'tbl16b', 'tbl16c', 'tbl16d', 'tbl16e', 'tbl16f', 'tbl16g', 'tbl16h', 'tbl16i', 'tbl16j', 'tbl16k', 'tbl16l', 'tbl16m', 'tbl16n', 'tbl16o',
@@ -1646,11 +1640,12 @@ public function update41(Request $request, $id){
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
+    }
 
-}
+
 
  public function index3(Request $request)
 
@@ -1833,21 +1828,14 @@ public function update41(Request $request, $id){
         $categories4 = [];
         $data4 = [];
         $data4a = [];
-       
-        
-
-      
+    
         foreach ($tbl4 as $tabel4){
             $categories4[] = $tabel4->kecamatan;
             $data4[] = $tabel4->ayam_kampung;
             $data4a[] = $tabel4->itik_itik_manila;
-       
-            
+
          
         }
-
-
-
 
         $jumlah19=0;
         foreach ($tbl4 as $tabel4){
@@ -2401,9 +2389,6 @@ public function update41(Request $request, $id){
         $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
         $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
 
- 
-
-
 
 
         $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
@@ -2779,14 +2764,15 @@ public function update41(Request $request, $id){
         }
         //pendidikan
         $tbl39=DB::table('pendidikan_paud')->paginate(10);
- $categories39 = [];
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -2822,7 +2808,8 @@ public function update41(Request $request, $id){
         }
 
         $tbl40=DB::table('pendidikan_sd')->paginate(10);
-       $categories40 = [];
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
@@ -2875,6 +2862,7 @@ public function update41(Request $request, $id){
 
 
         $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -2882,7 +2870,7 @@ public function update41(Request $request, $id){
         $data41c = [];
         $data41d = [];
         $data41e = [];
-        foreach ($tbl41 as $tabel41a){
+        foreach ($tbl41a as $tabel41a){
             $categories41[] = $tabel41a->kecamatan;
             $data41[] = $tabel41a->jumlah_sltp;
             $data41a[] = $tabel41a->jumlah_guru;
@@ -2913,7 +2901,6 @@ public function update41(Request $request, $id){
         $jumlahsltp5=0;
         foreach ($tbl41 as $tabel41e){
             $jumlahsltp5+=$tabel41e->Madrasah_Ibtidaiyah_Tsanawiyah;}
-
 
         //pemerintahan dan infrastrukur
 
@@ -3081,10 +3068,11 @@ public function update41(Request $request, $id){
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
 }
+    
 public function index1(Request $request)
 
     {
@@ -4212,14 +4200,15 @@ public function index1(Request $request)
         }
         //pendidikan
         $tbl39=DB::table('pendidikan_paud')->paginate(10);
- $categories39 = [];
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -4255,7 +4244,8 @@ public function index1(Request $request)
         }
 
         $tbl40=DB::table('pendidikan_sd')->paginate(10);
-       $categories40 = [];
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
@@ -4308,6 +4298,7 @@ public function index1(Request $request)
 
 
         $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -4514,10 +4505,11 @@ public function index1(Request $request)
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2' , 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
 }
+
 public function pendidikan1(Request $request)
 
     {
@@ -5549,7 +5541,6 @@ public function pendidikan1(Request $request)
         //kesehatan daftar panti asuhan
         $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
 
-
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
@@ -5644,15 +5635,16 @@ public function pendidikan1(Request $request)
             $data38[] = $tabel38a->jumlah;
         }
         //pendidikan
-        $tbl39=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->paginate(10);
- $categories39 = [];
+        $tbl39=DB::table('pendidikan_paud')->paginate(10);
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -5688,7 +5680,8 @@ public function pendidikan1(Request $request)
         }
 
         $tbl40=DB::table('pendidikan_sd')->paginate(10);
-       $categories40 = [];
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
@@ -5741,6 +5734,7 @@ public function pendidikan1(Request $request)
 
 
         $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -5947,10 +5941,11 @@ public function pendidikan1(Request $request)
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
 }
+
 
 
 
@@ -7081,14 +7076,15 @@ public function pendidikan2(Request $request)
         }
         //pendidikan
         $tbl39=DB::table('pendidikan_paud')->paginate(10);
- $categories39 = [];
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -7123,8 +7119,9 @@ public function pendidikan2(Request $request)
             $jumlahpendidikan5+=$tabel39e->Madrasah_Ibtidaiyah_Tsanawiyah;
         }
 
-        $tbl40=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->paginate(10);
-       $categories40 = [];
+        $tbl40=DB::table('pendidikan_sd')->paginate(10);
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
@@ -7177,6 +7174,7 @@ public function pendidikan2(Request $request)
 
 
         $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -7198,7 +7196,7 @@ public function pendidikan2(Request $request)
         }
         $jumlahsltp1=0;
         foreach ($tbl41 as $tabel41a){
-            $jumlahsltp1+=$tabel41a->jumlah_guru;
+            $jumlahsltp1+=$tabel40a->jumlah_guru;
         }
         $jumlahsltp2=0;
         foreach ($tbl41 as $tabel41b){
@@ -7215,7 +7213,6 @@ public function pendidikan2(Request $request)
         $jumlahsltp5=0;
         foreach ($tbl41 as $tabel41e){
             $jumlahsltp5+=$tabel41e->Madrasah_Ibtidaiyah_Tsanawiyah;}
-
 
         //pemerintahan dan infrastrukur
 
@@ -7387,11 +7384,12 @@ public function pendidikan2(Request $request)
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
-
 }
+
+
 
 public function pendidikan3(Request $request)
 
@@ -8519,15 +8517,16 @@ public function pendidikan3(Request $request)
             $data38[] = $tabel38a->jumlah;
         }
         //pendidikan
-        $tbl39=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->paginate(10);
- $categories39 = [];
+        $tbl39=DB::table('pendidikan_paud')->paginate(10);
+        $tbl39a=DB::table('pendidikan_paud')->where('status', '=', 'Accepted')->get();
+        $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
         $data39c = [];
         $data39d = [];
         $data39e = [];
-        foreach ($tbl39 as $tabel39a){
+        foreach ($tbl39a as $tabel39a){
             $categories39[] = $tabel39a->kecamatan;
             $data39[] = $tabel39a->jumlah_paud;
             $data39a[] = $tabel39a->jumlah_guru;
@@ -8563,7 +8562,8 @@ public function pendidikan3(Request $request)
         }
 
         $tbl40=DB::table('pendidikan_sd')->paginate(10);
-       $categories40 = [];
+        $tbl40a=DB::table('pendidikan_sd')->where('status', '=', 'Accepted')->get();
+        $categories40 = [];
         $data40 = [];
         $data40a = [];
         $data40b = [];
@@ -8615,7 +8615,8 @@ public function pendidikan3(Request $request)
             $jumlahsd5+=$tabel40e->Madrasah_Ibtidaiyah_Tsanawiyah;}
 
 
-        $tbl41=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->paginate(10);
+        $tbl41=DB::table('pendidikan_sltp')->paginate(10);
+        $tbl41a=DB::table('pendidikan_sltp')->where('status', '=', 'Accepted')->get();
         $categories41 = []; 
         $data41 = [];
         $data41a = [];
@@ -8623,8 +8624,7 @@ public function pendidikan3(Request $request)
         $data41c = [];
         $data41d = [];
         $data41e = [];
-        $tbl42=DB::table('pendidikan_sltp')->paginate(10);
-        foreach ($tbl42 as $tabel41a){
+        foreach ($tbl41a as $tabel41a){
             $categories41[] = $tabel41a->kecamatan;
             $data41[] = $tabel41a->jumlah_sltp;
             $data41a[] = $tabel41a->jumlah_guru;
@@ -8655,7 +8655,6 @@ public function pendidikan3(Request $request)
         $jumlahsltp5=0;
         foreach ($tbl41 as $tabel41e){
             $jumlahsltp5+=$tabel41e->Madrasah_Ibtidaiyah_Tsanawiyah;}
-
 
         //pemerintahan dan infrastrukur
 
@@ -8823,9 +8822,10 @@ public function pendidikan3(Request $request)
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl42','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl39a', 'tbl40a', 'tbl41a'));
         
     }
-}
 
 }
+
+    }

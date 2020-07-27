@@ -113,7 +113,7 @@
 
 
 
-    </div>
+   
 @endsection
 
 @section('chart')

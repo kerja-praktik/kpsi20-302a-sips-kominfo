@@ -39,10 +39,11 @@
                                                         <option value="6">Peternakan, Perikanan, Perkebunan, dan Pertanian</option>
                                                         <option value="7">Perindustrian dan Teknologi</option>
                                                         <option value="8">Infrastruktur</option>
-                                                        <option value="9">BKD</option>
+                                                        <option value="9">Pegawai(BKD)</option>
                                                         <option value="10">PDAM</option>
                                                         <option value="11">Lingkungan Hidup</option>
                                                         <option value="12">RSUD</option>
+                                                        <option value="0">Admin</option>
                                                     </select>
                             </div>
                         </div>

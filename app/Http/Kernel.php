@@ -71,6 +71,9 @@ class Kernel extends HttpKernel
         'perindustrian' => \App\Http\Middleware\Perindustrian::class,
         'LingkunganHidup' => \App\Http\Middleware\LingkunganHidup::class,
         'pdam' => \App\Http\Middleware\PDAM::class,
+        'rsud' => \App\Http\Middleware\Rsud::class,
+        'ketapang' => \App\Http\Middleware\Ketapang::class,
+        'pegawai' => \App\Http\Middleware\Pegawai::class,
     ];
 
     /**
