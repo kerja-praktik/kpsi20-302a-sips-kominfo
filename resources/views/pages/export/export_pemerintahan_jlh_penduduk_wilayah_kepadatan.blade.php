@@ -47,7 +47,7 @@
             </tr>
             @endforeach
             <?php
-            $a = DB::table("pemerintahan-jlhpendudukwilayahkepadatan")->get();
+            $a = DB::table("pemerintahan-jlhpendudukwilayahkepadatan")->where('status', '=', 'Accepted')->get();
             // $kepadatan_penduduk+= $a->Jlh_Penduduk/$a->Luas_Wilayah;
             ?>
             $kepadatan_penduduk+= $tabel44->Jlh_Penduduk/$tabel44->Luas_Wilayah;

@@ -44,7 +44,7 @@
                             <div class="carousel-item">
                             <div id="chart8"></div>   
                             </div>     
-                            </div> 
+
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,8 +101,9 @@
                                     <td>
                                     <a href="{{ url('/edit29/'.$tabel29->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kesehatan_jumlah_akseptor_aktif/hapus/{{ $tabel29->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kesehatan_jumlah_akseptor_aktif/hapus29/{{ $tabel29->id }}">Hapus</a>        
+
                     </td>
                                     </tr>
                                 @endforeach
@@ -128,6 +129,7 @@
                 </div>
   
             </div>
+        </div>
         </div>
         <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">

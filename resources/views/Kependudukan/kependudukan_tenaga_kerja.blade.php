@@ -5,11 +5,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                <div id="chart1"></div> 
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                         
-                            
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -18,9 +16,12 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                            
+                           
                         </ol>
                         <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <div id="chart1"></div> 
+                            </div>
                             <div class="carousel-item active">
                             <div id="chart2"></div> 
                             </div>
@@ -48,15 +49,16 @@
                       
                         <h4 class="card-title" align="center">Angka Partisipasi Angkatan Kerja (APAK)</h4>
                         <div class="col-12 text-right">
+                             
                             </div>
 
-                            <!-- <p class="card-category">Here is a subtitle for this table</p> -->
-                        </div>
+                            
                         <div class="card-body table-full-width table-responsive">
                         <a href="/kependudukan_tenaga_kerja/exportpdf23" class="btn btn-sm btn-warning"   >CETAK PDF</a>
                             <table class="table table-hover table-striped">
                                 <thead>
                                 <tr>  
+                                
                                     <td align="center" rowspan="2"><b>No</td>
                                     <td align="center" rowspan="2"><b>Kelompok Umur</td>
                                     <td align="center" colspan="3"><b>Angkatan Kerja</td>
@@ -65,6 +67,8 @@
                                     <td align="center" rowspan="2"><b>APAK</td>
                                     <td align="center" rowspan="2"><b>Pengangguran Terbuka</td>
                                     <td align="center" rowspan="2"><b>Tahun</td>
+                                    <td align="center" rowspan="2"><b>Status</td>
+                    
                                     </tr>
                                     <tr>
                                     <td><b>Bekerja</td>                                  
@@ -86,6 +90,9 @@
                                     <td align="center">{{number_format($tabel23->APAK,0,",",".")}}</td>
                                     <td align="center">{{number_format($tabel23->pengangguran_terbuka,0,",",".")}}</td>
                                     <td align="center">{{$tabel23->tahun}}</td>
+                                    <td align="center">{{$tabel23->status}}</td>
+                                    
+                                    
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -96,7 +103,7 @@
   
             </div>
         </div>
-    </div>
+    
 @endsection
 @section('chart')
 <script src="https://code.highcharts.com/highcharts.js"></script>

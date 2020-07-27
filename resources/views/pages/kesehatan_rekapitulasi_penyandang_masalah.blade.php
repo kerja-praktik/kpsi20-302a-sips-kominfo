@@ -64,7 +64,7 @@
                      
                     <div class="col-12 text-right"> 
                                 <a href="{{url('/tambah_rekapitulasi_penyandang_masalah')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
-                    </div>
+                            </div>
                    
                         <h4 class="card-title" align="center">Rekapitulasi Penyandang Masalah Kesejahteraan Sosial (PMKS) Yang telah menerima Pelayan/Bantuan</h4>
 
@@ -113,8 +113,8 @@
                                     <td>
                                     <a href="{{ url('/edit24/'.$tabel24->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kesehatan_rekapitulasi_penyandang_masalah/hapus/{{ $tabel24->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kesehatan_rekapitulasi_penyandang_masalah/hapus24/{{ $tabel24->id }}">Hapus</a>       
                     </td>
                                     </tr>
                                 @endforeach

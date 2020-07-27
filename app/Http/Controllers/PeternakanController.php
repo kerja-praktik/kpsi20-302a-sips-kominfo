@@ -48,11 +48,6 @@ use App\rekapitulasi_data_menara;
 use App\daftar_internet_dan_game_monitoring;
 use App\jumlah_desa_blank_spot;
 
-
-
-
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -72,7 +67,7 @@ class PeternakanController extends Controller
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];

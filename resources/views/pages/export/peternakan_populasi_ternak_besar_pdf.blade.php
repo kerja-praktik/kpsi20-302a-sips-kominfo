@@ -83,8 +83,8 @@
                                     <td align="center">{{number_format($a->sum("kerbau"),0,",",".")}}</td>
                                     <td align="center">{{number_format($a->sum("kuda"),0,",",".")}}</td>    
                                     <td align="center">{{number_format($a->sum("kambing"),0,",",".")}}</td>
-                                    <td align="center">{{number_format($a->sum("domba"),0,",",".")</td>
-                                    <td align="center">{{number_format($a->sum("babi"),0,",",".")</td>
+                                    <td align="center">{{number_format($a->sum("domba"),0,",",".")}}</td>
+                                    <td align="center">{{number_format($a->sum("babi"),0,",",".")}}</td>
                                     <td></td>
 
                                    

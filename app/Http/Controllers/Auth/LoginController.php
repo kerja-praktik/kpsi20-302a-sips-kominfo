@@ -77,11 +77,20 @@ class LoginController extends Controller
             elseif(auth()->user()->role = 8) {
                 return redirect()->route('infrastruktur_aplikasi_opd_toba');
             }
+            elseif(auth()->user()->role = 9) {
+                return redirect()->route('pegawai_menurut_jenis_kelamin');
+            }
             elseif(auth()->user()->role = 10) {
                 return redirect()->route('pdam_jumlah_pemakaian_air_bersih');
             }
             elseif(auth()->user()->role = 11) {
-                return redirect()->route('izin_lingkungan_berdasarkan_jenis_perusahaan');
+                return redirect()->route('lindup_izin_lingkungan_berdasarkan_perusahaan');
+            }
+            elseif(auth()->user()->role = 12) {
+                return redirect()->route('rsud_kamar_rawat_inap');
+            }
+            elseif(auth()->user()->role = 13) {
+                return redirect()->route('ketapang');
             }
             else{
                 return redirect()->route('home');

@@ -1,7 +1,24 @@
-@extends('layouts.app', ['activePage' => 'formulir_jumlah_akta', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'formulir_jumlah_penduduk', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
+            @if(session('error'))
+            <div class="alert alert-error">
+            {{ session('error') }}
+            </div>
+            @endif
+
+            @if(count($errors) > 0)
+            <div class="alert alert-danger">
+            <strong>Perhatian !!!</strong>
+            <br>
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            </div>
+            @endif
         <div class="container-fluid">
             <div class="section-image">
                 <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
@@ -11,86 +28,95 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h3 class="mb-0">{{ __('Tambahkan Data') }}</h3>
+                                    <h4 class="mb-0">{{ __('Jumlah Akta Kelahiran, Perkawinan, Perceraian, dan Yang Memilki E-KTP Menurut Kecamatan') }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="{{url('/update22',$tabel22->id)}}" method="post" class="account-form">                   
+                        <form action="{{url('/update_status22',$tabel22->id)}}" method="post" class="account-form">                   
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type = "hidden" name = "status" value = "Requested">
                         {{method_field('PUT')}}
+                               
+                                <table  class="table table-borderless">
+                                        <thead>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Kecamatan</th>
+                                                <td>{{ $tabel22->kecamatan }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Akta Kelahiran</th>
+                                                <td>{{ $tabel22->akta_kelahiran }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Akta Perkawinan</th>
+                                                <td>{{ $tabel22->akta_perkawinan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Akta Perceraian</th>
+                                                <td>{{ $tabel22->akta_perceraian}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Yang Memiliki E-KTP</th>
+                                                <td>{{ $tabel22->yang_memiliki_ektp }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Tahun</th>
+                                                <td>{{ $tabel22->tahun }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Status</th>
+                                                <td>{{ $tabel22->status}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
                                 
-                                <h6 class="heading-small text-muted mb-4">{{ __('Jumlah Akta Kelahiran, Perkawinan, Perceraian, dan Yang Memilki E-KTP Menurut Kecamatan') }}</h6>
+                            
                                 
-
-                                 <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Kecamatan') }}
-                                        </label>
-                                        <input type="text" name="kecamatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Kecamatan') }}" value="{{ $tabel22->kecamatan }}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Akta Kelahiran') }}
-                                        </label>
-                                        <input type="text" name="akta_kelahiran" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Akta Kelahiran') }}" value="{{ $tabel22->akta_kelahiran}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Akta Perkawinan') }}
-                                        </label>
-                                        <input type="text" name="akta_perkawinan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Akta Perkawinan') }}" value="{{ $tabel22->akta_perkawinan}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Akta Perceraian') }}
-                                        </label>
-                                        <input type="text" name="akta_perceraian" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Akta Perceraian') }}" value="{{ $tabel22->akta_perceraian}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Yang Memiliki EKTP') }}
-                                        </label>
-                                        <input type="text" name="yang_memiliki_ektp" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Yang Memilki E-KTP') }}" value="{{ $tabel22->yang_memiliki_ektp}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Tahun') }}
-                                        </label>
-                                        <input type="text" name="tahun" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Tahun') }}" value="{{ $tabel22->tahun}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
-                                    </div>
-                                </div>
                             </form>
                             <hr class="my-4" />
                             
                         </div>
-                    </div>
+        @if($tabel22->status=='Requested')
+        <div class="footer"> 
+        <div class="col-md-4">
+            <form action="/kependudukan_jumlah_akta/{{$tabel22->id}}/accept22" method="post" class="d-inline">
+            @method('patch')
+             @csrf
+            <button type="submit" class="btn  btn-primary">Accept</button>
+            </form>
+
+            <form action="/kependudukan_jumlah_akta/{{$tabel22->id}}/reject22" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+            <button type="submit" class="btn  btn-danger">Reject</button>
+            </form>
+        </div>
+        @elseif($tabel22->status=='Accepted')
+        <div class="col-md-5">
+        <button type="submit" class="btn  btn-primary disabled"> <b> Sudah Di Accepted </b></button>
+        <form action="/kependudukan_jumlah_akta/{{$tabel22->id}}/reject22" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+        <button type="submit" class="btn  btn-danger">Reject</button>
+        </form>
+        <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        </div>
+        @else
+        <div class="col-md-4">
+        <button type="submit" class="btn  btn-danger disabled"> <b>Data di Reject </b></button>
+            <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        @endif
+        </div>
+    
+                </div>
 
                    
                 </div>
             </div>
-        </div>
-    </div>
+          
+                    
+      
 @endsection                           

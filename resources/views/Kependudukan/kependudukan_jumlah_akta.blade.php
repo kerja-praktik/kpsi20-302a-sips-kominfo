@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'kependudukan_jumlah_akta', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'table', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -28,7 +28,7 @@
                             <div class="carousel-item">
                             <div id="chart4"></div>   
                             </div> 
-                        
+                        </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -39,12 +39,14 @@
                         </a>
                     </div>
 
-                   
+                    <div class="col-12 text-right">
+                             
+                            </div>
   
                         <h4 class="card-title" align="center">Jumlah Akta Kelahiran, Perkawinan, Perceraian, dan Yang Memiliki E-KTP Menurut Kecamatan</h4>
 
-                            <!-- <p class="card-category">Here is a subtitle for this table</p> -->
-                        
+
+                            
                         <div class="card-body table-full-width table-responsive">
                         <a href="/kependudukan_jumlah_akta/exportpdf22" class="btn btn-sm btn-warning"   >CETAK PDF</a>
                             <table class="table table-hover table-striped">
@@ -56,7 +58,9 @@
                                     <td align="center"><b>Akta Perkawinan</td>
                                     <td align="center"><b>Akta Perceraian</td>
                                     <td align="center"><b>Yang Memiliki E-KTP</td>
+                                    <td align="center"><b>Status</td>
                                     <td align="center"><b>Tahun</td>
+                            
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +74,8 @@
                                     <td align="center">{{number_format($tabel22->akta_perceraian, 0, ".", ".")}}</td>
                                     <td align="center">{{number_format($tabel22->yang_memiliki_ektp, 0, ".", ".")}}</td>
                                     <td align="center">{{$tabel22->tahun}}</td>
+                                    <td align="center">{{$tabel22->status}}</td>
+                                    
                                     </tr>
                                 @endforeach
                                 <tr>
@@ -80,6 +86,8 @@
                                     <td align="center"><b><b>{{number_format($jumlah_perceraian, 0, ".", ".")}}</td>
                                     <td align="center"><b><b>{{number_format($jumlah_yang_memiliki_ektp, 0, ".", ".")}}</td>
                                     <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tbody>
                             </table>
                         </div>
@@ -89,15 +97,14 @@
             </div>
         </div>
         </div>
-        
         <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
-            <a class="page-link" href="{{url('/kependudukan_jumlah_penduduk1')}}" tabindex="-1" aria-disabled="true">Previous</a>
+            <a class="page-link" href="{{url('/kependudukan_jumlah_penduduk')}}" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
             
-            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_penduduk1')}}">1</a></li>
-            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_akta1')}}">2</a></li>
+            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_penduduk')}}">1</a></li>
+            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_akta')}}">2</a></li>
             
             <li class="page-item disabled">
             <a class="page-link" href="">Next</a>

@@ -340,6 +340,18 @@ Tip 2: you can also add an image using data-image tag
                     </ul>
                     </div>
                     </li>
+                    <li class="nav-item @if($activePage == 'user-management') active @endif">
+                        @if(Auth::user()->role == '0')
+                        <a class="nav-link" href="{{url('/admin/pegawai_menurut_jenis_kelamin')}}">
+                        @elseif(Auth::user()->role == '9')
+                        <a class="nav-link" href="{{url('/pegawai_menurut_jenis_kelamin')}}">
+                        @else 
+                        <a class="nav-link" href="{{url('/pegawai_menurut_jenis_kelamin1')}}">
+                        @endif
+                        <p>Pegawai (BKD)</p>
+                                </a>
+                            </a>
+                    </li>
                     
                     <li class="nav-item @if($activePage == 'pdam_jumlah_pemakaian_air_bersih') active @endif">
                             @if(Auth::user()->role == '0')
@@ -353,7 +365,7 @@ Tip 2: you can also add an image using data-image tag
                                     <p>PDAM</p>
                                 </a>
                                 </a>
-                        </li>
+                    </li>
                         <li class="nav-item @if($activePage == 'pariwisata') active @endif">
                             @if(Auth::user()->role == '0')
                             <a class="nav-link" href="{{url('/admin/lindup_izin_lingkungan_berdasarkan_perusahaan')}}">
@@ -368,7 +380,36 @@ Tip 2: you can also add an image using data-image tag
                                 </a>
                         </li>
 
+                        <li class="nav-item @if($activePage == 'rawat_inap_kelas') active @endif">
+                            @if(Auth::user()->role == '0')
+                            <a class="nav-link" href="{{url('/admin/rawat_inap_kelas')}}">
+                            @elseif(Auth::user()->role == '12')
+                                <a class="nav-link" href="{{url('/rawat_inap_kelas')}}">
+                            @else
+                                <a class="nav-link" href="{{url('/rawat_inap_kelas1')}}">
+                            @endif
+                                    <!-- <i class="nc-icon nc-bell-55"></i> -->
+                                    <p>RSUD</p>
+                                </a>
+                                </a>
                         </li>
+                        <li class="nav-item @if($activePage == 'bantuan_pemerintah_kecamatan') active @endif">
+                            @if(Auth::user()->role == '0')
+                            <a class="nav-link" href="{{url('/admin/bantuan_pemerintah_kecamatan')}}">
+                            @elseif(Auth::user()->role == '13')
+                                <a class="nav-link" href="{{url('/bantuan_pemerintah_kecamatan')}}">
+                            @else
+                                <a class="nav-link" href="{{url('/bantuan_pemerintah_kecamatan1')}}">
+                            @endif
+                                    <!-- <i class="nc-icon nc-bell-55"></i> -->
+                                    <p>Ketahanan Pangan</p>
+                                </a>
+                                </a>
+                        </li>
+
+                        
+
+                    </li>
                         
                     
  
