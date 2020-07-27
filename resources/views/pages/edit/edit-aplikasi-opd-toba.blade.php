@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h3 class="mb-0">{{ __('Tambahkan Data') }}</h3>
+                                    <h3 class="mb-0">{{ __('Edit Data') }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -62,6 +62,5 @@
                    
                 </div>
             </div>
-        </div>
-    </div>
+       
 @endsection                           

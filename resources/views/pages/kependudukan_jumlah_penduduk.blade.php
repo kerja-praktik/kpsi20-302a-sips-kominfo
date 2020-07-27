@@ -11,7 +11,7 @@
                         <div class="card-header ">
                     
                     <div class="col-12 text-right">
-                                <a href="{{url('/tambah_jumlah_penduduk')}}" class="btn btn-sm btn-default">Tambahkan Data</a>
+                                <a href="{{url('/tambah_jumlah_penduduk')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
                             </div>
                      
                         <h4 class="card-title" align="center">Jumlah Penduduk Menurut Kecamatan dan Jenis Kelamin Kabupaten Toba Samosir</h4>
@@ -49,8 +49,8 @@
                                     <a href="{{ url('/edit21/'.$tabel21->id) }}" class="btn btn-sm btn-success">Edit</a>
 
                             &nbsp
-                                   
-                            <a href="/kependudukan_jumlah_penduduk/hapus/{{ $tabel21->id }}" class="btn btn-sm btn-danger">Hapus</a>
+                               
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kependudukan_jumlah_penduduk/hapus21/{{ $tabel21->id }}">Hapus</a>      
                     </td>
                                     </tr>
                                 @endforeach
@@ -59,7 +59,7 @@
                                     <td align="center"><b><b>Jumlah</td>
                                     <td align="center"><b><b>{{number_format($jumlah_laki_laki, 0, ".", ".")}}</td>
                                     <td align="center"><b><b>{{number_format($jumlah_perempuan, 0, ".", ".")}}</td>
-                                    <td align="center"><b><b>{{number_format($jumlah_total, 0, ".", ".")}}</td>
+                                    <td align="center"><b><b>{{number_format($jumlah_laki_laki+$jumlah_perempuan, 0, ".", ".")}}</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

@@ -32,8 +32,7 @@
                             <div class="carousel-item">
                             <div id="chart5"></div>   
                             </div> 
-                            
-                        </div>
+
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -43,13 +42,15 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
+                    </div>
      
                     <div class="col-12 text-right">
                                 <a href="{{url('/tambah_jumlah_tenaga_kesehatan')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
-                
-                    </div>
+                            </div>
                         <h4 class="card-title" align="center">Jumlah Tenaga Kesehatan Menurut Kecamatan</h4>
-    
+
+
+                           
                         <div class="card-body table-full-width table-responsive">
                         <a href="/kesehatan_jumlah_tenaga_kesehatan/exportpdf26" class="btn btn-sm btn-warning"   >CETAK PDF</a>
                             <table class="table table-hover table-striped">
@@ -81,8 +82,9 @@
                                     <td>
                                     <a href="{{ url('/edit26/'.$tabel26->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kesehatan_jumlah_tenaga_kesehatan/hapus/{{ $tabel26->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kesehatan_jumlah_tenaga_kesehatan/hapus26/{{ $tabel26->id }}">Hapus</a>       
+
                     </td>
                                     </tr>
                                 @endforeach
@@ -100,8 +102,9 @@
                                 </tbody>
                             </table>
                             {{ $tbl26->links() }}
+                            </div>
                         </div>
-                    </div>
+                    
                 </div>
   
             </div>
@@ -128,7 +131,7 @@
             </li>
         </ul>
         </nav>
-    
+    </div>
 @endsection
 @section('chart')
 <script src="https://code.highcharts.com/highcharts.js"></script>

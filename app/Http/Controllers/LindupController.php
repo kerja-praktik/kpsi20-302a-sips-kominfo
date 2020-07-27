@@ -4273,14 +4273,14 @@ class LindupController extends Controller
 
         $tbl60=DB::table('lindup_jenis_daur_ulang_sampah')->paginate(10);
         $tbl60a=DB::table('lindup_jenis_daur_ulang_sampah')->where('status','=', 'Accepted');
-        $categories60 = [];
-        $data60a = [];
+        // $categories60 = [];
+        // $data60a = [];
         
-        foreach ($tbl60a as $tabel52){
-            $categories60[] = $tabel52->pemakaian_air_bersih;
-            $data60[] = $tabel52->jumlah;
+        // foreach ($tbl60a as $tabel52){
+        //     $categories60[] = $tabel52->kecamatan;
+        //     $data60[] = $tabel52->jumlah;
             
-        }
+        // }
        
             return view('pages.lindup_jenis_daur_ulang_sampah',  compact('tbl1', 'jumlah1', 'i', 'tbl2', 'jumlah2', 'tbl3', 'jumlah3', 'tbl4', 'jumlah4', 'tbl5', 'jumlah5', 'tbl6', 'jumlah6', 'tbl7', 'jumlah7','tbl8', 'jumlah8', 
             'tbl9', 'jumlah9', 'jumlah10', 'jumlah11', 'tbl10', 'tbl11', 'tbl12', 'tbl13', 'tbl14', 'tbl15', 'tbl16', 'tbl17', 'tbl18', 'jumlah12', 'jumlah13', 'jumlah14', 'jumlah15', 
@@ -4334,7 +4334,7 @@ class LindupController extends Controller
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl60', 'tbl60a', 'categories60', 'data60'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl60', 'tbl60a'));
         
     }
 
@@ -4425,7 +4425,6 @@ class LindupController extends Controller
             $data1a[] = $tabel2a->ayam_pedaging;
             $data1b[] = $tabel2a->ayam_petelor;
             $data1c[] = $tabel2a->itik_itik_manila;
-            
          
         }
 

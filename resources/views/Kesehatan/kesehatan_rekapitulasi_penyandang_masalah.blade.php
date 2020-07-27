@@ -110,6 +110,7 @@
                                     <td align="center">{{number_format($tabel24->UEP_lansia, 0, ".", ".")}}</td>
                                     <td align="center">{{$tabel24->tahun}}</td>
                                     
+                                    
                                     </tr>
                                 @endforeach
                                 <tr>

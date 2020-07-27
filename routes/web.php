@@ -22,11 +22,172 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware'=>'ketapang'],function (){
+	Route::get('/bantuan_pemerintah_kecamatan', 'KetapangController@index1')->name('bantuan_pemerintah_kecamatan');
+	Route::get('/formulir-bantuan-pemerintah-kecamatan', 'KetapangController@formulir1')->name('formulir-bantuan-pemerintah-kecamatan');	
+	Route::post('/formulir/formulir-bantuan-pemerintah-kecamatan', 'KetapangController@tambah1');
+	Route::get('/bantuan_pemerintah_kecamatan/hapus65/{id}','KetapangController@hapus65');
+	Route::get('edit65/{id}','KetapangController@edit65')->name('edit65');
+	Route::put('/update65/{id}','KetapangController@update65');
+	Route::get('/bantuan_pemerintah_kecamatan1/exportpdf65','KetapangController@exportpdf65');
+});
+
+Route::group(['middleware'=>'rsud'],function (){
+	Route::get('/rawat_inap_kelas', 'RSUDController@index1')->name('rawat_inap_kelas');
+	Route::get('/formulir-rawat-inap-kelas', 'RSUDController@formulir1')->name('formulir-rawat-inap-kelas');	
+	Route::post('/formulir/formulir-rawat-inap-kelas', 'RSUDController@tambah1');
+	Route::get('/rawat_inap_kelas/hapus61/{id}','RSUDController@hapus61');
+	Route::get('edit61/{id}','RSUDController@edit61')->name('edit61');
+	Route::put('/update61/{id}','RSUDController@update61');
+	Route::get('/rawat_inap_kelas1/exportpdf61','RSUDController@exportpdf61');
+
+	Route::get('/tenaga_dokter', 'RSUDController@index2')->name('tenaga_dokter');
+	Route::get('/formulir-tenaga-dokter', 'RSUDController@formulir2')->name('formulir-tenaga-dokter');	
+	Route::post('/formulir/formulir-tenaga-dokter', 'RSUDController@tambah2');
+	Route::get('/tenaga_dokter/hapus62/{id}','RSUDController@hapus62');
+	Route::get('edit62/{id}','RSUDController@edit62')->name('edit62');
+	Route::put('/update62/{id}','RSUDController@update62');
+	Route::get('/tenaga_dokter1/exportpdf62','RSUDController@exportpdf62');
+
+	Route::get('/peralatan_rumah_sakit', 'RSUDController@index3')->name('peralatan_rumah_sakit');
+	Route::get('/formulir-peralatan-rumah-sakit', 'RSUDController@formulir3')->name('formulir-peralatan-rumah-sakit');	
+	Route::post('/formulir/formulir-peralatan-rumah-sakit', 'RSUDController@tambah3');
+	Route::get('/peralatan_rumah_sakit/hapus63/{id}','RSUDController@hapus63');
+	Route::get('edit63/{id}','RSUDController@edit63')->name('edit63');
+	Route::put('/update63/{id}','RSUDController@update63');
+	Route::get('/peralatan_rumah_sakit1/exportpdf63','RSUDController@exportpdf63');
+
+	Route::get('/perawat_penyakit', 'RSUDController@index4')->name('perawat_penyakit');
+	Route::get('/formulir-perawat-penyakit', 'RSUDController@formulir4')->name('formulir-perawat-penyakit');	
+	Route::post('/formulir/formulir-perawat-penyakit', 'RSUDController@tambah4');
+	Route::get('/perawat_penyakit/hapus64/{id}','RSUDController@hapus64');
+	Route::get('edit64/{id}','RSUDController@edit64')->name('edit64');
+	Route::put('/update64/{id}','RSUDController@update64');
+	Route::get('/perawat_penyakit1/exportpdf64','RSUDController@exportpdf64');
+});
+
 
 Route::group(['middleware'=>'admin'],function (){
+	
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/daftar_user', 'AdminController@daftar_user')->name('daftar_user');
 Route::get('/daftar_user/hapus/{id}','AdminController@hapus');
+
+//kesehatan penyandang masalah
+Route::get('/admin/kesehatan_rekapitulasi_penyandang_masalah', 'AdminController@kesehatan_index1')->name('kesehatan_rekapitulasi_penyandang_masalah1');
+Route::patch('/kesehatan_rekapitulasi_penyandang_masalah/{id}/accept24','AdminController@accept24');
+Route::patch('/kesehatan_rekapitulasi_penyandang_masalah/{id}/reject24','AdminController@reject24');
+Route::get('edit_status24/{id}','AdminController@edit24')->name('edit_status24');
+//kesehatan jumlah dokter
+Route::get('/admin/kesehatan_jumlah_dokter', 'AdminController@kesehatan_index2')->name('kesehatan_jumlah_dokter1');
+Route::patch('/kesehatan_jumlah_dokter/{id}/accept25','AdminController@accept25');
+Route::patch('/kesehatan_jumlah_dokter/{id}/reject25','AdminController@reject25');
+Route::get('edit_status25/{id}','AdminController@edit25')->name('edit_status25');
+//kesehatan jumlah tenaga kesehatan
+Route::get('/admin/kesehatan_jumlah_tenaga_kesehatan', 'AdminController@kesehatan_index3')->name('kesehatan_jumlah_tenaga_kesehatan1');
+Route::patch('/kesehatan_jumlah_tenaga_kesehatan/{id}/accept26','AdminController@accept26');
+Route::patch('/kesehatan_jumlah_tenaga_kesehatan/{id}/reject26','AdminController@reject26');
+Route::get('edit_status26/{id}','AdminController@edit26')->name('edit_status26');
+//kesehatan jumlah fasilitas kesehatan 
+Route::get('/admin/kesehatan_jumlah_fasilitas_kesehatan', 'AdminController@kesehatan_index4')->name('kesehatan_jumlah_fasilitas_kesehatan1');
+Route::patch('/kesehatan_jumlah_fasilitas_kesehatan/{id}/accept27','AdminController@accept27');
+Route::patch('/kesehatan_jumlah_fasilitas_kesehatan/{id}/reject27','AdminController@reject27');
+Route::get('edit_status27/{id}','AdminController@edit27')->name('edit_status27');
+//kesehatan jumlah kasus penyakit
+Route::get('/admin/kesehatan_jumlah_kasus_penyakit', 'AdminController@kesehatan_index5')->name('kesehatan_jumlah_kasus_penyakit1');
+Route::patch('/kesehatan_jumlah_kasus_penyakit/{id}/accept28','AdminController@accept28');
+Route::patch('/kesehatan_jumlah_kasus_penyakit/{id}/reject28','AdminController@reject28');
+Route::get('edit_status28/{id}','AdminController@edit28')->name('edit_status28');
+//kesehatan jumlah akseptor
+Route::get('/admin/kesehatan_jumlah_akseptor_aktif', 'AdminController@kesehatan_index6')->name('kesehatan_jumlah_akseptor_aktif1');
+Route::patch('/kesehatan_jumlah_akseptor_aktif/{id}/accept29','AdminController@accept29');
+Route::patch('/kesehatan_jumlah_akseptor_aktif/{id}/reject29','AdminController@reject29');
+Route::get('edit_status29/{id}','AdminController@edit29')->name('edit_status29');
+//kesehatan jumlah bayi
+Route::get('/admin/kesehatan_jumlah_bayi_lahir', 'AdminController@kesehatan_index7')->name('kesehatan_jumlah_bayi_lahir1');
+Route::patch('/kesehatan_jumlah_bayi_lahir/{id}/accept30','AdminController@accept30');
+Route::patch('/kesehatan_jumlah_bayi_lahir/{id}/reject30','AdminController@reject30');
+Route::get('edit_status30/{id}','AdminController@edit30')->name('edit_status30');
+//kesehatan daftar lokasi
+Route::get('/admin/kesehatan_daftar_lokasi_panti', 'AdminController@kesehatan_index8')->name('kesehatan_daftar_lokasi_panti1');
+Route::patch('/kesehatan_daftar_lokasi_panti/{id}/accept31','AdminController@accept31');
+Route::patch('/kesehatan_daftar_lokasi_panti/{id}/reject31','AdminController@reject31');
+Route::get('edit_status31/{id}','AdminController@edit31')->name('edit_status31');
+
+//kependudukan penduduk
+Route::get('/admin/kependudukan_jumlah_penduduk', 'AdminController@kependudukan_index1')->name('kependudukan_jumlah_penduduk1');
+Route::patch('/kependudukan_jumlah_penduduk/{id}/accept21','AdminController@accept21');
+Route::patch('/kependudukan_jumlah_penduduk/{id}/reject21','AdminController@reject21');
+Route::get('edit_status21/{id}','AdminController@edit21')->name('edit_status21');
+// kependudukan akta
+Route::get('/admin/kependudukan_jumlah_akta', 'AdminController@kependudukan_index2')->name('kependudukan_jumlah_akta1');
+Route::patch('/kependudukan_jumlah_akta/{id}/accept22','AdminController@accept22');
+Route::patch('/kependudukan_jumlah_akta/{id}/reject22','AdminController@reject22');
+Route::get('edit_status22/{id}','AdminController@edit22')->name('edit_status22');
+  
+// kependudukan tenaga kerja
+Route::get('/admin/kependudukan_tenaga_kerja', 'AdminController@kependudukan_index3')->name('kependudukan_jumlah_tenaga_kerja1');
+Route::patch('/kependudukan_jumlah_tenaga_kerja/{id}/accept23','AdminController@accept23');
+Route::patch('/kependudukan_jumlah_tenaga_kerja/{id}/reject23','AdminController@reject23');
+Route::get('edit_status23/{id}','AdminController@edit23')->name('edit_status23');
+
+//pegawai menurut jenis kelamin
+Route::get('/admin/pegawai_menurut_jenis_kelamin', 'AdminController@pegawai_index1')->name('pegawai_menurut_jenis_kelamin1');
+Route::patch('/pegawai_menurut_jenis_kelamin/{id}/accept53','AdminController@accept53');
+Route::patch('/pegawai_menurut_jenis_kelamin/{id}/reject53','AdminController@reject53');
+Route::get('edit_status53/{id}','AdminController@edit53')->name('edit_status53');
+
+//pegawai menurut golongan
+Route::get('/admin/pegawai_menurut_golongan', 'AdminController@pegawai_index2')->name('pegawai_menurut_golongan1');
+Route::patch('/pegawai_menurut_golongan/{id}/accept54','AdminController@accept54');
+Route::patch('/pegawai_menurut_golongan/{id}/reject54','AdminController@reject54');
+Route::get('edit_status54/{id}','AdminController@edit54')->name('edit_status54');
+
+//pegawai menurut pendidikan
+Route::get('/admin/pegawai_menurut_pendidikan', 'AdminController@pegawai_index3')->name('pegawai_menurut_pendidikan1');
+Route::patch('/pegawai_menurut_pendidikan/{id}/accept55','AdminController@accept55');
+Route::patch('/pegawai_menurut_pendidikan/{id}/reject55','AdminController@reject55');
+Route::get('edit_status55/{id}','AdminController@edit55')->name('edit_status55');
+
+//pegawai yang pindah pensiun
+Route::get('/admin/pegawai_yang_pindah_pensiun', 'AdminController@pegawai_index4')->name('pegawai_yang_pindah_pensiun1');
+Route::patch('/pegawai_yang_pindah_pensiun/{id}/accept56','AdminController@accept56');
+Route::patch('/pegawai_yang_pindah_pensiun/{id}/reject56','AdminController@reject56');
+Route::get('edit_status56/{id}','AdminController@edit56')->name('edit_status56');
+
+
+
+//ketapang
+Route::get('/admin/bantuan_pemerintah_kecamatan', 'AdminController@ketapang_index1')->name('admin_bantuan_pemerintah_kecamatan');
+Route::patch('/bantuan_pemerintah_kecamatan/{id}/accept65','AdminController@accept65');
+Route::patch('/bantuan_pemerintah_kecamatan/{id}/reject65','AdminController@reject65');
+Route::get('edit_status65/{id}','AdminController@edit65')->name('edit_status65');
+Route::get('/bantuan_pemerintah_kecamatan/exportpdf65','AdminController@exportpdf65');
+
+//rsud
+Route::get('/admin/rawat_inap_kelas', 'AdminController@rsud_index1')->name('admin_rawat_inap_kelas');
+Route::patch('/rawat_inap_kelas/{id}/accept61','AdminController@accept61');
+Route::patch('/rawat_inap_kelas/{id}/reject61','AdminController@reject61');
+Route::get('edit_status61/{id}','AdminController@edit61')->name('edit_status61');
+Route::get('/rawat_inap_kelas/exportpdf61','AdminController@exportpdf61');
+
+Route::get('/admin/tenaga_dokter', 'AdminController@rsud_index2')->name('admin_tenaga_dokter');
+Route::patch('/tenaga_dokter/{id}/accept62','AdminController@accept62');
+Route::patch('/tenaga_dokter/{id}/reject62','AdminController@reject62');
+Route::get('edit_status62/{id}','AdminController@edit62')->name('edit_status62');
+Route::get('/tenaga_dokter/exportpdf62','AdminController@exportpdf62');
+
+Route::get('/admin/peralatan_rumah_sakit', 'AdminController@rsud_index3')->name('admin_peralatan_rumah_sakit');
+Route::patch('/peralatan_rumah_sakit/{id}/accept63','AdminController@accept63');
+Route::patch('/peralatan_rumah_sakit/{id}/reject63','AdminController@reject63');
+Route::get('edit_status63/{id}','AdminController@edit63')->name('edit_status63');
+Route::get('/peralatan_rumah_sakit/exportpdf63','AdminController@exportpdf63');
+
+Route::get('/admin/perawat_penyakit', 'AdminController@rsud_index4')->name('admin_perawat_penyakit');
+Route::patch('/perawat_penyakit/{id}/accept64','AdminController@accept64');
+Route::patch('/perawat_penyakit/{id}/reject64','AdminController@reject64');
+Route::get('edit_status64/{id}','AdminController@edit64')->name('edit_status64');
+Route::get('/perawat_penyakit/exportpdf64','AdminController@exportpdf64');
 
 //Peternakan
 Route::get('/admin/peternakan_populasi_ternak_besar', 'AdminController@peternakan_index1')->name('admin_peternakan_populasi_ternak_besar');
@@ -252,7 +413,7 @@ Route::patch('/pendidikansd/{id}/accept40','AdminController@accept40');
 Route::patch('/pendidikansd/{id}/reject40','AdminController@reject40');
 Route::get('edit_status40/{id}','AdminController@edit40')->name('edit_status40');
 
-Route::get('/admin/pendidikansltp', 'AdminController@pendidikan_index3')->name('admin_pendidikansltp');
+Route::get('/admin/pendidikansltp', 'AdminController@pendidikan_index3')->name('/admin/pendidikansltp');
 Route::patch('/pendidikansltp/{id}/accept41','AdminController@accept41');
 Route::patch('/pendidikansltp/{id}/reject41','AdminController@reject41');
 Route::get('edit_status41/{id}','AdminController@edit41')->name('edit_status41');
@@ -349,10 +510,48 @@ Route::get('/pariwisataobjek/exportpdf35','PariwisataController@exportpdf35');
 Route::get('/pariwisatakapal/exportpdf36','PariwisataController@exportpdf36');
 Route::get('/pariwisatakunjungan/exportpdf37','PariwisataController@exportpdf37');
 Route::get('/pariwisatarestoran/exportpdf38','PariwisataController@exportpdf38');
-	
-	
-    
 });
+	
+Route::group(['middleware'=>'pegawai'],function (){
+	//pegawai menurut jenis kelamin
+	Route::get('/pegawai_menurut_jenis_kelamin', 'PegawaiController@index1')->name('pegawai_menurut_jenis_kelamin');
+	Route::get('/tambah_pegawai_menurut_jenis_kelamin', 'PegawaiController@formulir53')->name('tambah_pegawai_menurut_jenis_kelamin');
+	Route::post('/formulir/pegawai_menurut_jenis_kelamin', 'PegawaiController@tambah53');
+	Route::get('/pegawai_menurut_jenis_kelamin/hapus53/{id}','PegawaiController@hapus53');
+	Route::get('edit53/{id}','PegawaiController@edit53')->name('edit53');
+	Route::put('/update53/{id}','PegawaiController@update53');
+	Route::get('/pegawai_menurut_jenis_kelamin/exportpdf53','PegawaiController@exportpdf53');
+ 
+	//pegawai menurut golongan
+	Route::get('/pegawai_menurut_golongan', 'PegawaiController@index2')->name('pegawai_menurut_golongan');
+	Route::get('/tambah_pegawai_menurut_golongan', 'PegawaiController@formulir54')->name('tambah_pegawai_menurut_golongan');
+	Route::post('/formulir/pegawai_menurut_golongan', 'PegawaiController@tambah54');
+	Route::get('/pegawai_menurut_golongan/hapus54/{id}','PegawaiController@hapus54');
+	Route::get('edit54/{id}','PegawaiController@edit54')->name('edit54');
+	Route::put('/update54/{id}','PegawaiController@update54');
+	Route::get('/pegawai_menurut_golongan/exportpdf54','PegawaiController@exportpdf54');
+
+	//pegawai menurut pendidikan
+	Route::get('/pegawai_menurut_pendidikan', 'PegawaiController@index3')->name('pegawai_menurut_pendidikan');
+	Route::get('/tambah_pegawai_menurut_pendidikan', 'PegawaiController@formulir55')->name('tambah_pegawai_menurut_pendidikan');
+	Route::post('/formulir/pegawai_menurut_pendidikan', 'PegawaiController@tambah55');
+	Route::get('/pegawai_menurut_pendidikan/hapus55/{id}','PegawaiController@hapus55');
+	Route::get('edit55/{id}','PegawaiController@edit55')->name('edit55');
+	Route::put('/update55/{id}','PegawaiController@update55');
+	Route::get('/pegawai_menurut_pendidikan/exportpdf55','PegawaiController@exportpdf55');
+ 
+	//pegawai yang pindah pensiun
+	Route::get('/pegawai_yang_pindah_pensiun', 'PegawaiController@index4')->name('pegawai_yang_pindah_pensiun');
+	Route::get('/tambah_pegawai_yang_pindah_pensiun', 'PegawaiController@formulir56')->name('tambah_pegawai_yang_pindah_pensiun');
+	Route::post('/formulir/pegawai_yang_pindah_pensiun', 'PegawaiController@tambah56');
+	Route::get('/pegawai_yang_pindah_pensiun/hapus56/{id}','PegawaiController@hapus56');
+	Route::get('edit56/{id}','PegawaiController@edit56')->name('edit56');
+	Route::put('/update56/{id}','PegawaiController@update56');
+	Route::get('/pegawai_yang_pindah_pensiun/exportpdf56','PegawaiController@exportpdf56');
+
+});
+    
+
 Route::group(['middleware'=>'pemerintahan'],function (){
 	// Route::get('{page_pemerintahan}', ['as' => 'page.pemerintahan', 'uses' => 'PemerintahanController@index1']);
 	Route::get('/pemerintahan_jlh_desa_kel', 'PemerintahanController@index1')->name('pemerintahan_jlh_desa_kel');
@@ -578,7 +777,6 @@ Route::group(['middleware'=>'pendidikan'],function (){
 	Route::get('/pariwisata/hapus40/{id}','PendidikanController@hapus40');
 	Route::get('edit40/{id}','PendidikanController@edit40')->name('edit40');
 	Route::put('/update40/{id}','PendidikanController@update40');
-	
 
 	Route::get('/pendidikansltp', 'PendidikanController@index3')->name('pendidikansltp');
 	Route::get('/formulir-pendidikan-sltp', 'PendidikanController@formulir9')->name('formulir-pendidikan-sltp');	
@@ -586,9 +784,6 @@ Route::group(['middleware'=>'pendidikan'],function (){
 	Route::get('/pariwisata/hapus41/{id}','PendidikanController@hapus41');
 	Route::get('edit41/{id}','PendidikanController@edit41')->name('edit41')->name('edit41');
 	Route::put('/update41/{id}','PendidikanController@update41');
-	Route::get('/pendidikanpaud/exportpdf39','PendidikanController@exportpdf39');
-	Route::get('/pendidikansd/exportpdf40','PendidikanController@exportpdf40');
-	Route::get('/pendidikansltp/exportpdf41','PendidikanController@exportpdf41');
 	
 	
 	
@@ -1075,11 +1270,38 @@ Route::get('/pariwisatarestoran/exportpdf38','PariwisataController@exportpdf38')
 
 
 Route::get('/pdam_jumlah_pemakaian_air_bersih/exportpdf57','PDAMController@exportpdf1');
-
 Route::get('/lindup_izin_lingkungan_berdasarkan_perusahaan/exportpdf58','LindupController@exportpdf1');
 Route::get('/lindup_jumlah_produksi_sampah/exportpdf59','LindupController@exportpdf2');
 Route::get('/lindup_jenis_daur_ulang_sampah/exportpdf60','LindupController@exportpdf3');
-	
+
+
+//ketapang
+Route::get('/bantuan_pemerintah_kecamatan1','ketapangController@ketapang1')->name('bantuan_pemerintah_kecamatan1');
+Route::get('/bantuan_pemerintah_kecamatan2/exportpdf65','KetapangController@exportpdf65');
+
+
+//rsud
+Route::get('/rawat_inap_kelas1','rsudController@rsud1')->name('rawat_inap_kelas1');
+Route::get('/tenaga_dokter1','rsudController@rsud2')->name('tenaga_dokter1');
+Route::get('/peralatan_rumah_sakit1','rsudController@rsud3')->name('peralatan_rumah_sakit1');
+Route::get('/perawat_penyakit1','rsudController@rsud4')->name('perawat_penyakit1');
+Route::get('/rawat_inap_kelas2/exportpdf61','RSUDController@exportpdf61');
+Route::get('/tenaga_dokter2/exportpdf62','RSUDController@exportpdf62');
+Route::get('/peralatan_rumah_sakit2/exportpdf63','RSUDController@exportpdf63');
+Route::get('/perawat_penyakit2/exportpdf64','RSUDController@exportpdf64');
+
+//export pegawai
+Route::get('/pegawai_menurut_jenis_kelamin/exportpdf53','PegawaiController@exportpdf53');
+Route::get('/pegawai_menurut_golongan/exportpdf54','PegawaiController@exportpdf54');
+Route::get('/pegawai_menurut_pendidikan/exportpdf55','PegawaiController@exportpdf55');
+Route::get('/pegawai_yang_pindah_pensiun/exportpdf56','PegawaiController@exportpdf56');
+
+//pegawai
+Route::get('/pegawai_menurut_jenis_kelamin1','PegawaiController@pegawai1')->name('pegawai_menurut_jenis_kelamin1');
+Route::get('/pegawai_menurut_golongan1','PegawaiController@pegawai2')->name('pegawai_menurut_golongan1');
+Route::get('/pegawai_menurut_pendidikan1','PegawaiController@pegawai3')->name('pegawai_menurut_pendidikan1');
+Route::get('/pegawai_yang_pindah_pensiun1','PegawaiController@pegawai4')->name('pegawai_yang_pindah_pensiun1');
+
 
 });
 
