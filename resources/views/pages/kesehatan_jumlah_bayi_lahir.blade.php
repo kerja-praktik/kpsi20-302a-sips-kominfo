@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                <div id="chart1"></div> 
+                
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             
@@ -14,10 +14,13 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                         </ol>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                        <div class="carousel-item active">
+                            <div id="chart1"></div> 
+                            </div>
+                            <div class="carousel-item">
                             <div id="chart2"></div> 
                             </div>
                             <div class="carousel-item">
@@ -27,7 +30,6 @@
                             <div id="chart4"></div>   
                             </div> 
                                
-                            </div> 
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,8 +83,9 @@
                                     <td>
                                     <a href="{{ url('/edit30/'.$tabel30->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kesehatan_jumlah_bayi_lahir/hapus/{{ $tabel30->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kesehatan_jumlah_bayi_lahir/hapus30/{{ $tabel30->id }}">Hapus</a>      
+                            
                     </td>
                                     </tr>
                                 @endforeach
@@ -104,6 +107,7 @@
                 </div>
   
             </div>
+        </div>
         </div>
         <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">

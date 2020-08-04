@@ -9,9 +9,7 @@
                 </div>
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
-                    
-                    <div class="col-12 text-right">
-                            </div>
+                
                      
                         <h4 class="card-title" align="center">Jumlah Penduduk Menurut Kecamatan dan Jenis Kelamin Kabupaten Toba Samosir</h4>
 
@@ -27,10 +25,10 @@
                                     <td align="center"><b>Perempuan</td>
                                     <td align="center"><b>Total</td>
                                     <td align="center"><b>Tahun</td>
+                                    <td align="center"><b>Status</td>
                                 </tr>
 
                                 </thead>
-                            
                                 <tbody>
                                 @foreach($tbl21 as $tabel21)
                                 <?php $i++; ?>
@@ -41,6 +39,8 @@
                                     <td align="center">{{number_format($tabel21->perempuan,0,",",".")}}</td>
                                     <td align="center">{{number_format($tabel21->laki_laki+$tabel21->perempuan,0,",",".")}}</td>
                                     <td align="center">{{$tabel21->tahun}}</td>
+                                    <td align="center">{{$tabel21->status}}</td>
+                                    
                                     </tr>
                                 @endforeach
                                 <tr>
@@ -48,11 +48,13 @@
                                     <td align="center"><b><b>Jumlah</td>
                                     <td align="center"><b><b>{{number_format($jumlah_laki_laki, 0, ".", ".")}}</td>
                                     <td align="center"><b><b>{{number_format($jumlah_perempuan, 0, ".", ".")}}</td>
-                                    <td align="center"><b><b>{{number_format($jumlah_total, 0, ".", ".")}}</td>
+                                    <td align="center"><b><b>{{number_format($jumlah_laki_laki+$jumlah_perempuan, 0, ".", ".")}}</td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tbody>
                             </table>
+                            {{ $tbl21->links() }}
                         </div>
                     </div>
                 </div>
@@ -65,7 +67,7 @@
             <a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
             
-            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_penduduk1')}}">1</a></li>
+            <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_penduduk')}}">1</a></li>
             <li class="page-item"><a class="page-link" href="{{url('/kependudukan_jumlah_akta1')}}">2</a></li>
             
             <li class="page-item">

@@ -39,7 +39,7 @@ class KependudukanController extends Controller
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -103,7 +103,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -145,7 +145,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -209,7 +209,7 @@ class KependudukanController extends Controller
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -242,7 +242,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -269,7 +269,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -295,7 +295,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -304,7 +304,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -313,7 +313,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -323,7 +323,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -332,7 +332,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -341,7 +341,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -352,7 +352,7 @@ class KependudukanController extends Controller
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -406,7 +406,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -462,7 +462,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -518,7 +518,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -575,7 +575,7 @@ class KependudukanController extends Controller
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -630,7 +630,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -725,7 +725,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -746,7 +746,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -765,48 +765,48 @@ class KependudukanController extends Controller
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -828,7 +828,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -851,7 +851,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -883,7 +883,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -905,7 +905,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -972,7 +972,7 @@ class KependudukanController extends Controller
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -996,7 +996,7 @@ class KependudukanController extends Controller
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -1033,7 +1033,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -1095,7 +1095,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -1104,7 +1104,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -1158,7 +1158,7 @@ class KependudukanController extends Controller
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -1188,7 +1188,7 @@ class KependudukanController extends Controller
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -1477,7 +1477,7 @@ class KependudukanController extends Controller
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -1513,7 +1513,7 @@ class KependudukanController extends Controller
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
@@ -1585,7 +1585,7 @@ class KependudukanController extends Controller
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -1649,7 +1649,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -1691,7 +1691,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -1755,7 +1755,7 @@ class KependudukanController extends Controller
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -1788,7 +1788,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -1815,7 +1815,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -1841,7 +1841,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -1850,7 +1850,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -1859,7 +1859,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -1869,7 +1869,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -1878,7 +1878,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -1887,7 +1887,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -1898,7 +1898,7 @@ class KependudukanController extends Controller
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -1952,7 +1952,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -2008,7 +2008,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -2064,7 +2064,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -2121,7 +2121,7 @@ class KependudukanController extends Controller
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -2176,7 +2176,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -2271,7 +2271,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -2292,7 +2292,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -2311,48 +2311,48 @@ class KependudukanController extends Controller
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -2374,7 +2374,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -2397,7 +2397,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -2429,7 +2429,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -2451,7 +2451,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -2518,7 +2518,7 @@ class KependudukanController extends Controller
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -2542,7 +2542,7 @@ class KependudukanController extends Controller
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -2579,7 +2579,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -2641,7 +2641,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -2650,7 +2650,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -2704,7 +2704,7 @@ class KependudukanController extends Controller
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -2734,7 +2734,7 @@ class KependudukanController extends Controller
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -3025,7 +3025,7 @@ class KependudukanController extends Controller
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -3061,7 +3061,7 @@ class KependudukanController extends Controller
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
@@ -3133,7 +3133,7 @@ class KependudukanController extends Controller
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -3197,7 +3197,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -3239,7 +3239,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -3303,7 +3303,7 @@ class KependudukanController extends Controller
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -3336,7 +3336,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -3363,7 +3363,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -3389,7 +3389,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -3398,7 +3398,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -3407,7 +3407,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -3417,7 +3417,7 @@ class KependudukanController extends Controller
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -3426,7 +3426,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -3435,7 +3435,7 @@ class KependudukanController extends Controller
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -3446,7 +3446,7 @@ class KependudukanController extends Controller
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -3500,7 +3500,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -3556,7 +3556,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -3612,7 +3612,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -3669,7 +3669,7 @@ class KependudukanController extends Controller
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -3724,7 +3724,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -3819,7 +3819,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -3840,7 +3840,7 @@ class KependudukanController extends Controller
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -3859,48 +3859,48 @@ class KependudukanController extends Controller
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -3922,7 +3922,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -3945,7 +3945,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -3977,7 +3977,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -3999,7 +3999,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -4066,7 +4066,7 @@ class KependudukanController extends Controller
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -4090,7 +4090,7 @@ class KependudukanController extends Controller
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -4127,7 +4127,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -4189,7 +4189,7 @@ class KependudukanController extends Controller
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -4198,7 +4198,7 @@ class KependudukanController extends Controller
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -4252,7 +4252,7 @@ class KependudukanController extends Controller
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -4282,7 +4282,7 @@ class KependudukanController extends Controller
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -4573,7 +4573,7 @@ class KependudukanController extends Controller
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -4609,7 +4609,7 @@ class KependudukanController extends Controller
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
@@ -4678,8 +4678,7 @@ class KependudukanController extends Controller
 
     //kependudukan jumlah penduduk
     public function formulir21(){
-       
-        return view("pages.formulir_jumlah_penduduk");
+    return view("pages.formulir_jumlah_penduduk");
 }
 public function tambah21(Request $request)
 {
@@ -4729,11 +4728,8 @@ public function exportpdf21()
 
 
 //kependudukan jumlah akta
-public function formulir22($page_kependudukan){
-    if (view()->exists("pages.{$page_kependudukan}")) {
-        return view("pages.{$page_kependudukan}");
-    }
-    return abort(404);
+public function formulir22(){
+        return view("pages.formulir_jumlah_akta");
 }
 public function tambah22(Request $request)
 {
@@ -4785,12 +4781,10 @@ public function exportpdf22()
 
 
 //kependudukan tenaga kerja
-public function formulir23($page_kependudukan){
-   if (view()->exists("pages.{$page_kependudukan}")) {
-        return view("pages.{$page_kependudukan}");
+public function formulir23(){
+    return view("pages.formulir_jumlah_tenaga_kerja");
     }
-    return abort(404);
-}
+
 public function tambah23(Request $request)
 {
     Model_Kependudukan_jumlah_tenaga_kerja::create(['kelompok_umur' => $request->kelompok_umur,
@@ -4821,7 +4815,7 @@ $this->validate($request,[
 'APAK'=>'required',
 'pengangguran_terbuka'=>'required',
 'tahun'=>'required',
-'status'=>'status',
+'status'=>'required',
 ]);
 $input_data=$request->all();
 Model_Kependudukan_jumlah_tenaga_kerja::where('id',$id)->update([
@@ -4849,7 +4843,7 @@ public function kependudukan1(Request $request)
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -4913,7 +4907,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -4955,7 +4949,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -5019,7 +5013,7 @@ public function kependudukan1(Request $request)
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -5052,7 +5046,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -5079,7 +5073,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -5105,7 +5099,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -5114,7 +5108,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -5123,7 +5117,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -5133,7 +5127,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -5142,7 +5136,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -5151,7 +5145,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -5162,7 +5156,7 @@ public function kependudukan1(Request $request)
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -5216,7 +5210,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -5272,7 +5266,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -5328,7 +5322,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -5385,7 +5379,7 @@ public function kependudukan1(Request $request)
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -5440,7 +5434,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -5535,7 +5529,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -5556,7 +5550,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -5575,48 +5569,48 @@ public function kependudukan1(Request $request)
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -5661,7 +5655,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -5693,7 +5687,7 @@ public function kependudukan1(Request $request)
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -5715,7 +5709,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -5782,7 +5776,7 @@ public function kependudukan1(Request $request)
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -5806,7 +5800,7 @@ public function kependudukan1(Request $request)
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -5843,7 +5837,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -5905,7 +5899,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -5914,7 +5908,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -5968,7 +5962,7 @@ public function kependudukan1(Request $request)
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -5998,7 +5992,7 @@ public function kependudukan1(Request $request)
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -6287,7 +6281,7 @@ public function kependudukan1(Request $request)
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -6323,7 +6317,7 @@ public function kependudukan1(Request $request)
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
@@ -6395,7 +6389,7 @@ public function kependudukan1(Request $request)
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -6459,7 +6453,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -6501,7 +6495,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -6565,7 +6559,7 @@ public function kependudukan1(Request $request)
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -6598,7 +6592,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -6625,7 +6619,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -6651,7 +6645,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -6660,7 +6654,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -6669,7 +6663,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -6679,7 +6673,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -6688,7 +6682,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -6697,7 +6691,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -6708,7 +6702,7 @@ public function kependudukan1(Request $request)
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -6762,7 +6756,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -6818,7 +6812,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -6874,7 +6868,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -6931,7 +6925,7 @@ public function kependudukan1(Request $request)
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -6986,7 +6980,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -7081,7 +7075,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -7102,7 +7096,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -7121,48 +7115,48 @@ public function kependudukan1(Request $request)
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -7184,7 +7178,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -7239,7 +7233,7 @@ public function kependudukan1(Request $request)
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -7261,7 +7255,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -7328,7 +7322,7 @@ public function kependudukan1(Request $request)
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -7352,7 +7346,7 @@ public function kependudukan1(Request $request)
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -7389,7 +7383,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -7451,7 +7445,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -7460,7 +7454,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -7514,7 +7508,7 @@ public function kependudukan1(Request $request)
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -7544,7 +7538,7 @@ public function kependudukan1(Request $request)
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -7835,7 +7829,7 @@ public function kependudukan1(Request $request)
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -7871,7 +7865,7 @@ public function kependudukan1(Request $request)
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
@@ -7943,7 +7937,7 @@ public function kependudukan1(Request $request)
         $i=0;
 
         //peternakan dan teknologi
-        $tbl1=DB::table('peternakan_populasi_ternak_besar')->get();
+        $tbl1=DB::table('peternakan_populasi_ternak_besar')->paginate(10);
 
 
         $categories1a = [];
@@ -8007,7 +8001,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->get();
+        $tbl2=DB::table('peternakan_populasi_ternak_unggas')->paginate(10);
 
 
         $categories1 = [];
@@ -8049,7 +8043,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->get();
+        $tbl3=DB::table('peternakan_jumlah_ternak_dipotong')->paginate(10);
 
         $categories3 = [];
         $data3 = [];
@@ -8113,7 +8107,7 @@ public function kependudukan1(Request $request)
             $jumlah18+=$tabel3f->babi;
         }
 
-        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->get();
+        $tbl4=DB::table('peternakan_jumlah_ternak_unggas_dipotong')->paginate(10);
         
         $categories4 = [];
         $data4 = [];
@@ -8146,7 +8140,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->get();
+        $tbl5=DB::table('peternakan_jumlah_produksi_ternak_unggas')->paginate(10);
 
         $categories5 = [];
         $data5 = [];
@@ -8173,7 +8167,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->get();
+        $tbl6=DB::table('peternakan_jumlah_populasi_ternak_unggas')->paginate(10);
 
         $categories6 = [];
         $data6 = [];
@@ -8199,7 +8193,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->get();
+        $tbl7=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Babi')->paginate(10);
 
         $jumlahpenerima_kelompok_babi=0;
         $jumlahpenerima_ternak_babi=0;
@@ -8208,7 +8202,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_babi+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->get();
+        $tbl7a=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kerbau')->paginate(10);
 
         $jumlahpenerima_kelompok_kerbau=0;
         $jumlahpenerima_ternak_kerbau=0;
@@ -8217,7 +8211,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_kerbau+=$tabel7a->jumlah_ternak;
         }
 
-        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->get();
+        $tbl7b=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Sapi')->paginate(10);
 
         $jumlahpenerima_kelompok_sapi=0;
         $jumlahpenerima_ternak_sapi=0;
@@ -8227,7 +8221,7 @@ public function kependudukan1(Request $request)
         }
 
 
-        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->get();
+        $tbl7c=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Ayam')->paginate(10);
 
         $jumlahpenerima_kelompok_ayam=0;
         $jumlahpenerima_ternak_ayam=0;
@@ -8236,7 +8230,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_ayam+=$tabel7c->jumlah_ternak;
         }
 
-        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->get();
+        $tbl7d=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Itik')->paginate(10);
 
         $jumlahpenerima_kelompok_itik=0;
         $jumlahpenerima_ternak_itik=0;
@@ -8245,7 +8239,7 @@ public function kependudukan1(Request $request)
             $jumlahpenerima_ternak_itik+=$tabel7d->jumlah_ternak;
         }
 
-        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->get();
+        $tbl7e=DB::table('penerima_kelompok_bantuan_ternak')->where ('kategori', 'Penerima Ternak Kambing')->paginate(10);
 
         $jumlahpenerima_kelompok_kambing=0;
         $jumlahpenerima_ternak_kambing=0;
@@ -8256,7 +8250,7 @@ public function kependudukan1(Request $request)
 
      
         $i=0;
-        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->get();
+        $tbl8=DB::table('perkebunan_luas_dan_produksi_kopi_dan_kakao')->paginate(10);
 
         $categories8 = [];
         $data8 = [];
@@ -8310,7 +8304,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->get();
+        $tbl9=DB::table('perkebunan_luas_dan_produksi_karet_dan_kelapa_sawit')->paginate(10);
 
         $categories9 = [];
         $data9 = [];
@@ -8366,7 +8360,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->get();
+        $tbl10=DB::table('perkebunan_luas_dan_produksi_aren_dan_kemiri')->paginate(10);
 
         
         $categories10 = [];
@@ -8422,7 +8416,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->get();
+        $tbl11=DB::table('perkebunan_luas_dan_produksi_kelapa_dan_pinang')->paginate(10);
 
         $categories11 = [];
         $data11 = [];
@@ -8479,7 +8473,7 @@ public function kependudukan1(Request $request)
 
 
         $i=0;
-        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->get();
+        $tbl12=DB::table('perkebunan_luas_dan_produksi_andaliman_dan_nilam')->paginate(10);
 
         $categories12 = [];
         $data12 = [];
@@ -8534,7 +8528,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->get();
+        $tbl13=DB::table('perindustrian_industri_kecil_dan_menengah')->paginate(10);
 
         $categories13 = [];
         $data13 = [];
@@ -8629,7 +8623,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->get();     
+        $tbl14=DB::table('perindustrian_jumlah_dan_tenaga_kerja_industri_kecil_menengah')->paginate(10);     
         $categories14 = [];
         $data14 = [];
         $data14a = [];
@@ -8650,7 +8644,7 @@ public function kependudukan1(Request $request)
         }
 
         $i=0;
-        $tbl15=DB::table('teknologi_jumlah_menara')->get();
+        $tbl15=DB::table('teknologi_jumlah_menara')->paginate(10);
 
         $categories15 = [];
         $data15 = [];
@@ -8669,48 +8663,48 @@ public function kependudukan1(Request $request)
 
 
 
-        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->get();
-        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->get();
-        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->get();
-        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->get();
-        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->get();
-        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->get();
-        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->get();
-        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->get();
-        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->get();
-        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->get();
-        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->get();
-        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->get();
-        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->get();
-        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->get();
-        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->get();
-        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->get();
+        $tbl16=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Tampahan')->paginate(10);
+        $tbl16a=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Balige')->paginate(10);
+        $tbl16b=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Laguboti')->paginate(10);
+        $tbl16c=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Sigumpar')->paginate(10);
+        $tbl16d=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Silaen')->paginate(10);
+        $tbl16e=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Habinsaran')->paginate(10);
+        $tbl16f=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Borbor')->paginate(10);
+        $tbl16g=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Nassau')->paginate(10);
+        $tbl16h=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Siantar Narumonda')->paginate(10);
+        $tbl16i=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Porsea')->paginate(10);
+        $tbl16j=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Parmaksian')->paginate(10);
+        $tbl16k=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Pintu Pohan Meranti')->paginate(10);
+        $tbl16l=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Uluan')->paginate(10);
+        $tbl16m=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Lumban Julu')->paginate(10);
+        $tbl16n=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Bonatua Lunasi')->paginate(10);
+        $tbl16o=DB::table('teknologi_rekapitulasi_data_menara_pengguna_tinggi_menara')->where ('kategori_kecamatan', 'Kec. Ajibata')->paginate(10);
 
  
 
 
 
 
-        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->get();
-        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->get();
-        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->get();
-        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->get();
-        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->get();
-        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->get();
-        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->get();
-        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->get();
-        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->get();
-        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->get();
-        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->get();
-        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->get();
-        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->get();
-        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->get();
-        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->get();
-        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->get();
+        $tbl17=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Tampahan')->paginate(10);
+        $tbl17a=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Balige')->paginate(10);
+        $tbl17b=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Laguboti')->paginate(10);
+        $tbl17c=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Sigumpar')->paginate(10);
+        $tbl17d=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Silaen')->paginate(10);
+        $tbl17e=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Habinsaran')->paginate(10);
+        $tbl17f=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Borbor')->paginate(10);
+        $tbl17g=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Nassau')->paginate(10);
+        $tbl17h=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Siantar Narumonda')->paginate(10);
+        $tbl17i=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Porsea')->paginate(10);
+        $tbl17j=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Parmaksian')->paginate(10);
+        $tbl17k=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Pintu Pohan Meranti')->paginate(10);
+        $tbl17l=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Uluan')->paginate(10);
+        $tbl17m=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Lumban Julu')->paginate(10);
+        $tbl17n=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Bonatua Lunasi')->paginate(10);
+        $tbl17o=DB::table('teknologi_daftar_internet_game_monitoring')->where ('kecamatan', 'Kecamatan Ajibata')->paginate(10);
 
 
         $i=0;
-        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->get();
+        $tbl18=DB::table('teknologi_jumlah_desa_blank_spot')->paginate(10);
 
 
         $categories18 = [];
@@ -8732,7 +8726,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -8755,7 +8749,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -8809,7 +8803,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
-        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->get();
+        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
         $jumlah_rastra=0;
         foreach ($tbl24 as $tabel24){
             $jumlah_rastra+=$tabel24->rastra_non_PKH;
@@ -8876,7 +8870,7 @@ public function kependudukan1(Request $request)
         }
 
        //kesehatan jumlah dokter
-        $tbl25=DB::table('kesehatan_jumlah_dokter')->get();
+        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
         $jumlah_dokter_umum=0;
         foreach ($tbl25 as $tabel25){
             $jumlah_dokter_umum+=$tabel25->dokter_umum;
@@ -8900,7 +8894,7 @@ public function kependudukan1(Request $request)
             $data25b[] = $tabel25->dokter_spesialis;
         }
         //kesehatan jumlah tenaga ksesehatan
-        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->get();
+        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
         $jumlah_tenaga_medis=0;
         foreach ($tbl26 as $tabel26){
             $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -8937,7 +8931,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah fasilitas kesehatan
-        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->get();
+        $tbl27=DB::table('kesehatan_jumlah_fasilitas_kesehatan')->paginate(10);
         $jumlah_rumah_sakit=0;
         foreach ($tbl27 as $tabel27){
             $jumlah_rumah_sakit+=$tabel27->rumah_sakit;
@@ -8999,7 +8993,7 @@ public function kependudukan1(Request $request)
 
 
         //kesehatan jumlah kasus penyakit
-        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->get();
+        $tbl28=DB::table('kesehatan_jumlah_kasus_penyakit_terbanyak')->paginate(10);
         $categories28 = [];
         $data28 = [];
         foreach ($tbl28 as $tabel28){
@@ -9008,7 +9002,7 @@ public function kependudukan1(Request $request)
         }
 
         //kesehatan jumlah akseptor
-        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->get();
+        $tbl29=DB::table('kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi')->paginate(10);
         $jumlah_iud=0;
         foreach ($tbl29 as $tabel29){
             $jumlah_iud+=$tabel29->iud;
@@ -9062,7 +9056,7 @@ public function kependudukan1(Request $request)
             $data29g[] = $tabel29->jumlah; 
         }
         //kesehatan jumlah bayi lahir
-        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->get();
+        $tbl30=DB::table('kesehatan_jumlah_bayi_bblr')->paginate(10);
         $jumlah_bayi_lahir=0;
         foreach ($tbl30 as $tabel30){
             $jumlah_bayi_lahir+=$tabel30->bayi_lahir;
@@ -9092,7 +9086,7 @@ public function kependudukan1(Request $request)
             $data30c[] = $tabel30->BBLR_giji_buruk;  
         }
         //kesehatan daftar panti asuhan
-        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->get();
+        $tbl31=DB::table('kesehatan_daftar_panti_asuhan')->paginate(10);
         $categories31 = [];
         $data31 = [];
         foreach ($tbl31 as $tabel31){
@@ -9383,7 +9377,7 @@ public function kependudukan1(Request $request)
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->paginate(10);
         $categories51 = [];
         $data51a = [];
         $data51b = [];
@@ -9419,7 +9413,7 @@ public function kependudukan1(Request $request)
         }
 
         if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
+            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->paginate(10);
         }else{
             $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }

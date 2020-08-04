@@ -1,7 +1,25 @@
-@extends('layouts.app', ['activePage' => 'formulir_jumlah_akta', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'formulir_daftar_panti_asuhan', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+
 
 @section('content')
     <div class="content">
+            @if(session('error'))
+            <div class="alert alert-error">
+            {{ session('error') }}
+            </div>
+            @endif
+
+            @if(count($errors) > 0)
+            <div class="alert alert-danger">
+            <strong>Perhatian !!!</strong>
+            <br>
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            </div>
+            @endif
         <div class="container-fluid">
             <div class="section-image">
                 <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
@@ -11,86 +29,92 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h3 class="mb-0">{{ __('Tambahkan Data') }}</h3>
+                                    <h4 class="mb-0">{{ __('Daftar Lokasi Panti Asuhan yang Berada di Wilayah Kabupaten Toba Samosir') }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="{{url('/update31',$tabel31->id)}}" method="post" class="account-form">                   
+                        <form action="{{url('/update_status31',$tabel31->id)}}" method="post" class="account-form">                   
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type = "hidden" name = "status" value = "Requested">
                         {{method_field('PUT')}}
+                               
+                                <table  class="table table-borderless">
+                                        <thead>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Nama Panti</th>
+                                                <td>{{ $tabel31->nama_panti}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Alamat</th>
+                                                <td>{{ $tabel31->alamat}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Pimpinan</th>
+                                                <td>{{ $tabel31->pimpinan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Status</th>
+                                                <td>{{ $tabel31->terdaftar}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Jumlah Penghuni</th>
+                                                <td>{{ $tabel31->jumlah_penghuni}}</td>
+                                            </tr>                       
+                                            <tr>
+                                                <th scope="row">Tahun</th>
+                                                <td>{{ $tabel31->tahun }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Status</th>
+                                                <td>{{ $tabel31->status}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
                                 
-                                <h6 class="heading-small text-muted mb-4">{{ __('Daftar Lokasi Panti Asuhan yang Berada di Wilayah Kabupaten Toba Samosir') }}</h6>
-                                <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Nama Panti') }}
-                                        </label>
-                                        <input type="text" name="nama_panti" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Panti') }}" value="{{ $tabel31->nama_panti}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Alamat') }}
-                                        </label>
-                                        <input type="text" name="alamat" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Alamat') }}" value="{{ $tabel31->alamat}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Pimpinan') }}
-                                        </label>
-                                        <input type="text" name="pimpinan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Pimpinan') }}" value="{{ $tabel31->pimpinan}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Status') }}
-                                        </label>
-                                        <input type="text" name="terdaftar" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Status') }}" value="{{ $tabel31->terdaftar}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Jumlah Penghuni') }}
-                                        </label>
-                                        <input type="text" name="jumlah_penghuni" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Penghuni') }}" value="{{ $tabel31->jumlah_penghuni}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                   
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Tahun') }}
-                                        </label>
-                                        <input type="text" name="tahun" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Tahun') }}" value="{{ $tabel31->tahun}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
-                                    </div>
-                                </div>
+                            
+                                
                             </form>
                             <hr class="my-4" />
                             
                         </div>
-                    </div>
+        @if($tabel31->status=='Requested')
+        <div class="footer"> 
+        <div class="col-md-4">
+            <form action="/kesehatan_daftar_lokasi_panti/{{$tabel31->id}}/accept31" method="post" class="d-inline">
+            @method('patch')
+             @csrf
+            <button type="submit" class="btn  btn-primary">Accept</button>
+            </form>
 
-                   
+            <form action="/kesehatan_daftar_lokasi_panti/{{$tabel31->id}}/reject31" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+            <button type="submit" class="btn  btn-danger">Reject</button>
+            </form>
+        </div>
+        @elseif($tabel31->status=='Accepted')
+        <div class="col-md-5">
+        <button type="submit" class="btn  btn-primary disabled"> <b> Sudah Di Accepted </b></button>
+        <form action="/kesehatan_daftar_lokasi_panti/{{$tabel31->id}}/reject31" method="post" class="d-inline">
+            @method('patch')
+            @csrf
+        <button type="submit" class="btn  btn-danger">Reject</button>
+        </form>
+        <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        </div>
+        @else
+        <div class="col-md-4">
+        <button type="submit" class="btn  btn-danger disabled"> <b>Data di Reject </b></button>
+            <!-- <a href="{{url('/admin_pemerintahan_jlh_desa_kel')}}" class="card-link">Kembali</a> -->
+        @endif
+        </div>
+    
+                </div>
+
                 </div>
             </div>
-        </div>
-    </div>
+
 @endsection                           

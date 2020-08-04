@@ -35,7 +35,7 @@
                                 <tbody>
                                 
                                 <?php $i++; 
-                                    $a=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Balige')->get();
+                                    $a=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Balige')->where('status', '=', 'Accepted')->get();
                                     // $total += $a['alokasi_dasar']+$a['alokasi_formula'];
                                     ?>
                                    
@@ -69,7 +69,7 @@
                                     @endforeach
                                    
                                     <?php $i++; 
-                                    $b=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Laguboti')->get();
+                                    $b=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Laguboti')->where('status', '=', 'Accepted')->get();
                                     // $total += $b->alokasi_dasar+$b->alokasi_formula;
                                     ?>
                                    
@@ -105,7 +105,7 @@
                                    <!-- Habinsaran  -->
 
                                     <?php $i++; 
-                                    $c=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Habinsaran')->get();
+                                    $c=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Habinsaran')->where('status', '=', 'Accepted')->get();
                                     // $total += $c->alokasi_dasar+$c->alokasi_formula;
                                     ?>
                                    
@@ -140,7 +140,7 @@
 
                                     <!-- Borbor -->
                                     <?php $i++; 
-                                    $d=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Borbor')->get()
+                                    $d=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Borbor')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -173,7 +173,7 @@
 
                                     <!-- Nassau -->
                                     <?php $i++; 
-                                    $e=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Nassau')->get()
+                                    $e=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Nassau')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -207,7 +207,7 @@
 
                                     <!-- SIlaen -->
                                     <?php $i++; 
-                                    $f=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Silaen')->get()
+                                    $f=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Silaen')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -242,7 +242,7 @@
                                     <!-- Sigumpar -->
 
                                     <?php $i++; 
-                                    $g=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Sigumpar')->get()
+                                    $g=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Sigumpar')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -276,7 +276,7 @@
 
                                     <!-- Porsea -->
                                     <?php $i++; 
-                                    $h=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Porsea')->get()
+                                    $h=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Porsea')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -310,7 +310,7 @@
 
                                     <!-- Pintu Pohan Meranti -->
                                     <?php $i++; 
-                                    $i=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Pintu Pohan Meranti')->get()
+                                    $i=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Pintu Pohan Meranti')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -344,7 +344,7 @@
 
                                     <!-- //Siantar Narumonda -->
                                     <?php $i++; 
-                                    $j=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Siantar Narumonda')->get()
+                                    $j=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Siantar Narumonda')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -378,7 +378,7 @@
 
                                     <!-- Parmaksian -->
                                     <?php $i++; 
-                                    $k=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Parmaksian')->get()
+                                    $k=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Parmaksian')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -412,7 +412,7 @@
 
                                     <!-- Lumban Julu -->
                                     <?php $i++; 
-                                    $l=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Lumban Julu')->get()
+                                    $l=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Lumban Julu')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -446,7 +446,7 @@
 
                                     <!-- Uluan -->
                                     <?php $i++; 
-                                    $m=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Uluan')->get()
+                                    $m=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Uluan')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -480,7 +480,7 @@
 
                                     <!-- Ajibata -->
                                     <?php $i++; 
-                                    $n=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Ajibata')->get()
+                                    $n=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Ajibata')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -514,7 +514,7 @@
 
                                     <!-- Bonatua Lunasi -->
                                     <?php $i++; 
-                                    $o=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Bonatua Lunasi')->get()
+                                    $o=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Bonatua Lunasi')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -548,7 +548,7 @@
                                    
                                    <!-- Tampahan -->
                                    <?php $i++; 
-                                    $p=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Tampahan')->get()
+                                    $p=DB::table("infrastruktur-perhitungan_dana_desa")->where('kecamatan', 'Tampahan')->where('status', '=', 'Accepted')->get();
                                     ?>
                                    
                                     <tr>
@@ -616,7 +616,7 @@ Highcharts.chart('chart2', {
         type: 'column'
     },
     title: {
-        text: 'Jumlah Desa Dan Kelurahan Menurut Kecamatan'
+        text: 'Perhitungan Dana Desa Setiap Desa'
     },
     subtitle: {
         text: 'Kabupaten Toba'

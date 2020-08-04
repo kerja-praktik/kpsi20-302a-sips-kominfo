@@ -2915,14 +2915,11 @@ class PemerintahanController extends Controller
     
     }
 
+   
+
     public function tambah1(Request $request)
     {
-        $rule=[
-            'kecamatan' => 'required|string|unique:pemerintahan-jumlahdesakel',
-            
-            
-           ];
-           $this->validate($request, $rule);
+        
         Model_pemerintahan_jlh_desa_kel::create([
             'kecamatan' => $request->kecamatan,
             'Jumlah_Desa' => $request->desa, 
@@ -2996,7 +2993,8 @@ class PemerintahanController extends Controller
     public function tambah2(Request $request)
     {
         $rule=[
-            'kecamatan' => 'required|string|unique:pemerintahan-jlhpendudukwilayahkepadatan',
+          
+            'kecamatan' => 'required|string|unique:pemerintahan-jlhpendudukwilayahkepadatan', '&&', 'tahun' => 'required|numeric|unique:pemerintahan-jlhpendudukwilayahkepadatan',
            ];
         $this->validate($request, $rule);
         Model_formulir_jlh_penduduk_wilayah_kepadatan::create(['kecamatan' => $request->kecamatan,'Jlh_Penduduk' => $request->Jlh_Penduduk, 'Luas_Wilayah'=>$request->Luas_Wilayah, 'tahun'=>$request->tahun]);

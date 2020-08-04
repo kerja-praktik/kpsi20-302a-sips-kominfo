@@ -23,8 +23,8 @@
                                     <td align="center"><b>Kecamatan</td>
                                     <td align="center"><b>Nama Hotel</td>
                                     <td align="center"><b>Jumlah Kamar</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</ align="center">
+                                    <td><b>Tahun</td>
+                                    
                                  
                                 </thead>
                                 <tbody>
@@ -36,7 +36,7 @@
                                     <td align="center">{{$tabel34 -> hotel}}</td>
                                     <td align="center">{{number_format($tabel34->jumlah_kamar,0,",",".")}}</td>
                                     <td align="center">{{$tabel34 -> tahun}}</td>
-                                    <td align="center">{{$tabel34 -> status}}</td>
+                                    
                                   
                                     </tr>
                                     @endforeach

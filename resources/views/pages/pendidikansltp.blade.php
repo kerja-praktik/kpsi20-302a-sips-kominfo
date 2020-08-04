@@ -51,7 +51,7 @@
                     <div class="col-12 text-right">
                                 <a href="{{url('formulir-pendidikan-sltp')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
                             </div>
-</div>
+
                         <h4 class="card-title" align="center">Jumlah SLTP, Murid, Guru, serta Lembaga Kabupaten Toba</h4>
 
 
@@ -117,6 +117,8 @@
 
             </div>
         </div>
+        </div>
+        </div>
          <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -132,7 +134,7 @@
             </li>
         </ul>
         </nav>
-    </div>
+  
 @endsection
 
 

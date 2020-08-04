@@ -5,19 +5,16 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-12">
-                    <div id="chart2">
-                </div>
+                    
                
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
 
-                        
                     <div class="col-12 text-right">
                                 <a href="{{url('/tambah-pembagian-penetapan-besaran-alokasi-dana-desa')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
-                            </div>
+                    </div>
                                     
                         <h4 class="card-title" align="center">Pembagian Dan Penetapan Besaran Alokasi Dana Desa</h4>
-
                         <div class="col-12 text-left">
                 
                 <a href="/infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa/exportpdf7" class="btn btn-sm btn-warning">CETAK PDF</a>

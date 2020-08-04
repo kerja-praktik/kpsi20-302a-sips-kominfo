@@ -64,7 +64,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-balai_kesehatan">{{ __('Klik/Balai Kesehatan') }}</label>
+                                        <label class="form-control-label" for="input-balai_kesehatan">{{ __('Klinik/Balai Kesehatan') }}</label>
                                         <input type="balai_kesehatan" name="balai_kesehatan" id="input-balai_kesehatan" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Jumlah Klik/Balai Kesehatan') }}" value="" required>
         
                                         @include('alerts.feedback', ['field' => 'name'])
@@ -94,18 +94,17 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Tambah') }}</button>
                                     </div>
                                 </div>
                             </form>
                             <hr class="my-4" />
-                            
+                    
+                      
                         </div>
                     </div>
-
-                   
-                </div>
             </div>
         </div>
-    </div>
+        </div>
+   
 @endsection                           

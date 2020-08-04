@@ -25,8 +25,8 @@
                                     <td align="center"><b>No</td>
                                     <td align="center"><b>Kecamatan</td>
                                     <td align="center"><b>Jumlah Restoran</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
+                                    <td><b>Tahun</td>
+                                    
                                 </thead>
                                 <tbody>
                                     @foreach($tbl38 as $tabel38) 
@@ -35,7 +35,7 @@
                                     <td align="center">{{$tabel38 -> kecamatan}}</td>
                                     <td align="center">{{number_format($tabel38->jumlah, 0, ",", ",")}}</td>
                                     <td align="center">{{$tabel38 -> tahun}}</td>
-                                    <td align="center">{{$tabel38 -> status}}</td>
+                                  
                                  
                     </tr>
                                     @endforeach

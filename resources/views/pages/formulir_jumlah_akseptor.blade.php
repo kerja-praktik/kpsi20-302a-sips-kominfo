@@ -40,14 +40,14 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-MOW">{{ __('MOW') }}</label>
-                                        <input type="MOW" name="MOW" id="input-MOW" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Jumlah MOW') }}" value="" required>
+                                        <label class="form-control-label" for="input-mow">{{ __('MOW') }}</label>
+                                        <input type="mow" name="mow" id="input-mow" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Jumlah MOW') }}" value="" required>
         
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-MOP">{{ __('MOP') }}</label>
-                                        <input type="MOP" name="MOP" id="input-MOP" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Jumlah MOP') }}" value="" required>
+                                        <label class="form-control-label" for="input-mop">{{ __('MOP') }}</label>
+                                        <input type="mop" name="mop" id="input-mop" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Jumlah MOP') }}" value="" required>
         
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
@@ -88,7 +88,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Tambah') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -97,9 +97,9 @@
                         </div>
                     </div>
 
-                   
-                </div>
+
             </div>
         </div>
-    </div>
+        </div>
+    
 @endsection                           

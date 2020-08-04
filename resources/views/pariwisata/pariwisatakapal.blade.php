@@ -50,8 +50,8 @@
                                     <td align="center"><b>Perahu Tanpa Motor</td>
                                     <td align="center"><b>Perahu Motor Tempel</td>
                                     <td align="center"><b>Kapal Motor</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
+                                    <td><b>Tahun</td>
+                                   
                                  
                                 </thead>
                                 <tbody>
@@ -63,7 +63,7 @@
                                     <td align="center">{{number_format($tabel35->perahu_motor_tempel, 0, ",", ",")}}</td>
                                     <td align="center">{{number_format($tabel35->kapal_motor, 0, ",", ",")}}</td>
                                     <td align="center">{{$tabel35 -> tahun}}</td>
-                                    <td align="center">{{$tabel35 -> status}}</td>
+                                  
                                   
                                     @endforeach
 
@@ -83,6 +83,7 @@
                     </div>
                 </div>
 
+            </div>
             </div>
       
          <nav aria-label="Page navigation example">

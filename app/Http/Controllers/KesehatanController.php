@@ -904,8 +904,9 @@ class KesehatanController extends Controller
 
        //kesehatan rekapitulasi penyandang masalah kesejahteraan sosial
        $tbl24=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->paginate(10);
+       $tbl24a=DB::table('kesehatan_penyandang_masalah_kesejahteraan_sosial')->where('status', '=', 'Accepted')->get();
        $jumlah_rastra=0;
-       foreach ($tbl24 as $tabel24){
+       foreach ($tbl24a as $tabel24){
            $jumlah_rastra+=$tabel24->rastra_non_PKH;
        }
        $jumlah_RLTH=0;
@@ -955,7 +956,7 @@ class KesehatanController extends Controller
        $data24g = [];
        $data24h = [];
        $data24i = [];
-       foreach ($tbl24 as $tabel24){
+       foreach ($tbl24a as $tabel24){
            $categories24[] = $tabel24->kecamatan;
            $data24[] = $tabel24->rastra_non_PKH;
            $data24a[] = $tabel24->RLTH;
@@ -1573,7 +1574,7 @@ class KesehatanController extends Controller
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl24a'));
         }
     public function index2(Request $request)
     {
@@ -2514,8 +2515,9 @@ class KesehatanController extends Controller
 
       //kesehatan jumlah dokter
        $tbl25=DB::table('kesehatan_jumlah_dokter')->paginate(10);
+       $tbl25a=DB::table('kesehatan_jumlah_dokter')->where('status', '=', 'Accepted')->get();
        $jumlah_dokter_umum=0;
-       foreach ($tbl25 as $tabel25){
+       foreach ($tbl25a as $tabel25){
            $jumlah_dokter_umum+=$tabel25->dokter_umum;
        }
        $jumlah_dokter_gigi=0;
@@ -2530,7 +2532,7 @@ class KesehatanController extends Controller
        $data25 = [];
        $data25a = [];
        $data25b = [];
-       foreach ($tbl25 as $tabel25){
+       foreach ($tbl25a as $tabel25){
            $categories25[] = $tabel25->unit_kerja;
            $data25[] = $tabel25->dokter_umum;
            $data25a[] = $tabel25->dokter_gigi;
@@ -3116,7 +3118,7 @@ class KesehatanController extends Controller
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl25a'));
         }
 
         public function index3(Request $request)
@@ -4082,6 +4084,7 @@ class KesehatanController extends Controller
        }
        //kesehatan jumlah tenaga ksesehatan
        $tbl26=DB::table('kesehatan_jumlah_tenaga_kesehatan')->paginate(10);
+       $tbl26a=DB::table('kesehatan_jumlah_tenaga_kesehatan')->where('status', '=', 'Accepted')->get();
        $jumlah_tenaga_medis=0;
        foreach ($tbl26 as $tabel26){
            $jumlah_tenaga_medis+=$tabel26->tenaga_medis;
@@ -4108,7 +4111,7 @@ class KesehatanController extends Controller
        $data26b = [];
        $data26c = [];
        $data26d = [];
-       foreach ($tbl26 as $tabel26){
+       foreach ($tbl26a as $tabel26){
            $categories26[] = $tabel26->kecamatan;
            $data26[] = $tabel26->tenaga_medis;
            $data26a[] = $tabel26->tenaga_keperawatan;
@@ -4660,7 +4663,7 @@ class KesehatanController extends Controller
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2'));
+            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl26a'));
         }
         public function index4(Request $request)
     {

@@ -1,4 +1,4 @@
-@extends('infrastruktur.app', ['activePage' => 'formulir-pembagian_penetapan_besaran_alokasi_dana_desa', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'formulir-pembagian_penetapan_besaran_alokasi_dana_desa', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -73,6 +73,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+     
+    
 @endsection                           

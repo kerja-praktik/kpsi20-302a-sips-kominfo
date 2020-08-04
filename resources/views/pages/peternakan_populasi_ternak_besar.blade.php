@@ -70,7 +70,7 @@
                         <span class="no-icon">{{ __('Lainnya') }}</span>
                     </a> -->
                     <div class="col-12 text-right">
-                                <a href="{{url('/tambah_populasi_ternak_besar')}}" class="btn btn-sm btn-default">Tambahkan Data</a>
+                                <a href="{{url('/tambah_populasi_ternak_besar')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
                             </div>
                     <!-- <div class="dropdown-menu" arita-labelledby="navbarDropdownMenuLink">
                     

@@ -1,3 +1,4 @@
+
 @extends('layouts.app', ['activePage' => 'formulir_jumlah_bayi_bblr', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
@@ -64,7 +65,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Tambah') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -73,9 +74,10 @@
                         </div>
                     </div>
 
-                   
-                </div>
+
             </div>
         </div>
-    </div>
+        </div>
+     
+    
 @endsection                           

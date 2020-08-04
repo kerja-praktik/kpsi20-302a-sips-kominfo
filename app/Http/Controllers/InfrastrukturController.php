@@ -6,6 +6,7 @@ use App\Model_pemerintahan_jlh_desa_kel;
 use App\Model_formulir_jlh_penduduk_wilayah_kepadatan;
 use App\Model_infrastruktur_aplikasi_opd_toba;
 use App\Model_infrastruktur_panjang_jalan_kabupaten;
+use App\Model_infrastruktur_panjang_jalan;
 use App\Model_infrastruktur_jembatan;
 use App\Model_infrastruktur_pembangunan_bersumber_dana_desa;
 use App\Model_infrastruktur_penetapan_bagi_hasil_pajak;
@@ -1176,7 +1177,7 @@ class InfrastrukturController extends Controller
             // $data39d[] = $tabel39a->swasta;
             // $data39e[] = $tabel39a->Madrasah_Ibtidaiyah_Tsanawiyah;
         }
-        //dd($data39);
+        
 
         $jumlahpendidikan=0;
         foreach ($tbl39 as $tabel39){
@@ -11312,15 +11313,15 @@ class InfrastrukturController extends Controller
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::where('status', '=', 'Accepted')->get();
         $categories51 = [];
         $data51a = [];
         $data51b = [];
         $data51c = [];
         foreach ($tbl51a as $tabel44b){
-            $categories51[] = $tabel44b->kecamatan;
-            $data51a[] = $tabel44b->alokasi_dasar;
-            $data51b[] = $tabel44b->alokasi_formula;
+            $categories51[] = $tabel44b->groupBy('kecamatan');
+            $data51a[] = $tabel44b->groupBy('alokasi_dasar');
+            $data51b[] = $tabel44b->groupBy('alokasi_formula');
             $data51c[] = $tabel44b->alokasi_dasar+$tabel44b->alokasi_formula;
         }
         $tbl52=DB::table('infrastruktur-perhitungan_dana_desa')->orderBy('kecamatan','asc')->paginate(10);
@@ -11335,12 +11336,12 @@ class InfrastrukturController extends Controller
         foreach ($tbl52 as $tabel53a){
             $jumlah_pengguna_dana_desa=$tabel53a->alokasi_formula+$tabel53a->alokasi_dasar;
         }
-        $tbl53=DB::table('infrastruktur-perhitungan_dana_desa')->groupBy('kecamatan')->get();
+        $tbl52a=DB::table('infrastruktur-perhitungan_dana_desa')->groupBy('kecamatan')->get();
         $categories52 = [];
         $data52a = [];
         $data52b = [];
         $data52c = [];
-        foreach ($tbl53 as $tabel52){
+        foreach ($tbl52a as $tabel52){
             $categories52[] = $tabel52->kecamatan;
             $data52a[] = $tabel52->alokasi_dasar;
             $data52b[] = $tabel52->alokasi_formula;
@@ -11405,7 +11406,7 @@ class InfrastrukturController extends Controller
             'data47a', 'data48a','jumlah_total','jumlah_kelurahan',
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
-            'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
+            'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'tbl52a', 'jumlah_alokasi_formula', 
             'jumlah_pengguna_dana_desa', 'tabel2'));
         
     }
@@ -23189,13 +23190,13 @@ public function infrastruktur6(Request $request)
         $tbl49=DB::table('infrastruktur-pembangunanbersumberdanadesa')->paginate(10);
         $tbl50=DB::table('infrastruktur-pembagianpenetapanbagihasilpajak')->paginate(10);
         $tbl51=DB::table('infrastruktur-pembagian_penetapan_besaran_alokasi-dana_desa')->where('status', '=', 'Accepted')->paginate(10);
-        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::select('kecamatan')->groupBy('kecamatan')->get();
+        $tbl51a=Model_infrastruktur_pembagian_penetapan_besaran_alokasi_dana_desa::where('status', '=', 'Accepted')->get();
         $categories51 = [];
         $data51a = [];
         $data51b = [];
         $data51c = [];
         foreach ($tbl51a as $tabel44b){
-            $categories51[] = $tabel44b->kecamatan;
+            $categories51[] = $tabel44b->groupBy('kecamatan');
             $data51a[] = $tabel44b->alokasi_dasar;
             $data51b[] = $tabel44b->alokasi_formula;
             $data51c[] = $tabel44b->alokasi_dasar+$tabel44b->alokasi_formula;
@@ -24634,22 +24635,16 @@ public function infrastruktur6(Request $request)
         foreach ($tbl52 as $tabel53a){
             $jumlah_pengguna_dana_desa=$tabel53a->alokasi_formula+$tabel53a->alokasi_dasar;
         }
-        $tbl53=DB::table('infrastruktur-perhitungan_dana_desa')->groupBy('kecamatan')->get();
+        $tbl52a=DB::table('infrastruktur-perhitungan_dana_desa')->groupBy('kecamatan')->get();
         $categories52 = [];
         $data52a = [];
         $data52b = [];
         $data52c = [];
-        foreach ($tbl53 as $tabel52){
+        foreach ($tbl52a as $tabel52){
             $categories52[] = $tabel52->kecamatan;
             $data52a[] = $tabel52->alokasi_dasar;
             $data52b[] = $tabel52->alokasi_formula;
             $data52c[] = $tabel52->alokasi_dasar+$tabel52->alokasi_formula;
-        }
-
-        if($request->has('cari')){
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::where('kecamatan','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $tabel2 = \App\Model_pemerintahan_jlh_desa_kel::all();        
         }
 
         
@@ -24704,7 +24699,7 @@ public function infrastruktur6(Request $request)
             'data47a', 'data48a','jumlah_total','jumlah_kelurahan',
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
-            'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
+            'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'tbl52a', 'jumlah_alokasi_formula', 
             'jumlah_pengguna_dana_desa', 'tabel2'));
     }
  

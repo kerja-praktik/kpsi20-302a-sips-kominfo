@@ -47,7 +47,7 @@
 			</tr>
 			@endforeach
             <?php
-        $bayi = DB::table("kesehatan_jumlah_bayi_bblr")->get()
+        $bayi = DB::table("kesehatan_jumlah_bayi_bblr")->where('status', '=', 'Accepted')->get()
 
         ?>
 

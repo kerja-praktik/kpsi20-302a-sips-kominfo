@@ -20,8 +20,8 @@
                                     <td align="center"><b>Jenis Objek Wisata</td>
                                     <td align="center"><b>Lokasi</td>
                                     <td align="center"><b>Daerah</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
+                                    <td><b>Tahun</td>
+                                   
                                 </thead>
                                 <tbody>
                                     @foreach($tbl36 as $tabel36) 
@@ -31,7 +31,7 @@
                                     <td align="center">{{$tabel36 -> lokasi}}</td>
                                     <td align="center">{{$tabel36 -> daerah}}</td>
                                     <td align="center">{{$tabel36 -> tahun}}</td>
-                                    <td align="center">{{$tabel36 -> status}}</td>
+                                   
                                   
                                     @endforeach
                                 </tbody>
@@ -63,5 +63,5 @@
             </li>
         </ul>
         </nav>
-    </div>
+    
 @endsection

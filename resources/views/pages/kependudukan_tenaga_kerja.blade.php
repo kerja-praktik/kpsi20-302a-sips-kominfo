@@ -5,7 +5,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                <div id="chart1"></div> 
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                         
@@ -22,8 +21,11 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <div id="chart2"></div> 
+                            <div id="chart1"></div> 
                             </div>
+                            <div class="carousel-item">
+                            <div id="chart2"></div>   
+                            </div> 
                             <div class="carousel-item">
                             <div id="chart3"></div>   
                             </div> 
@@ -34,7 +36,6 @@
                             <div id="chart5"></div>   
                             </div> 
                                
-                            </div> 
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,13 +46,12 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                      
+                  
                         <h4 class="card-title" align="center">Angka Partisipasi Angkatan Kerja (APAK)</h4>
                         <div class="col-12 text-right">
                                 <a href="{{url('/tambah_jumlah_kerja')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
                             </div>
 
-                            
                         <div class="card-body table-full-width table-responsive">
                         <a href="/kependudukan_tenaga_kerja/exportpdf23" class="btn btn-sm btn-warning"   >CETAK PDF</a>
                             <table class="table table-hover table-striped">
@@ -94,20 +94,19 @@
                                     <a href="{{ url('/edit23/'.$tabel23->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
                                    
-                            <a href="/kependudukan_tenaga_kerja/hapus/{{ $tabel23->id }}" class="btn btn-sm btn-danger">Hapus</a>
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kependudukan_tenaga_kerja/hapus23/{{ $tabel23->id }}">Hapus</a>        
                     </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{ $tbl23->links() }}
+                        {{ $tbl23->links() }} 
                         </div>
                     </div>
                 </div>
-  
-            </div>
-        </div>
-    
+             </div>
+             </div>
+    </div>
 @endsection
 @section('chart')
 <script src="https://code.highcharts.com/highcharts.js"></script>

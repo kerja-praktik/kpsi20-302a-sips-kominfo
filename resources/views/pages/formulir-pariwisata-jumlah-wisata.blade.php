@@ -43,7 +43,8 @@
                                 
         
                                 <div class="form-group">
-                                                    <h8>Bulan</h8>
+                                <label class="form-control-label" for="input-desa">
+                                {{ __('kecamatan') }}</label>
                                                     <select name="bulan" class="form-control">
                                                         <option value="Januari">Januari</option>
                                                         <option value="Februari">Februari</option>
@@ -59,21 +60,7 @@
                                                         <option value="Desember">Desember</option>
                                                     </select>
                                                 </div>
-                                        <!-- <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            <!-- {{ __('Bulan') }}
-                                        </label>
-                                        <input type="text" name="bulan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Bulan') }}" value="" required autofocus>
-         --> 
-
-                                    <!-- <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            <!-- {{ __('Kecamatan') }}
-                                        </label>
-                                        <input type="text" name="kecamatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Kecamatan') }}" value="" required autofocus>
-         --> 
+                                       
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
@@ -106,7 +93,8 @@
 
                    
                 </div>
-            </div>
-        </div>
-    </div>
+         
+          
+      
+  
 @endsection                           

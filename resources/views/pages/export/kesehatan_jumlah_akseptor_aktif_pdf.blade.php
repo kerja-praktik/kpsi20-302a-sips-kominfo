@@ -54,7 +54,7 @@
 			</tr>
 			@endforeach
             <?php
-        $akseptor_aktif = DB::table("kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi")->get()
+        $akseptor_aktif = DB::table("kesehatan_jumlah_akseptor_aktif_dan_alat_kontrasepsi")->where('status', '=', 'Accepted')->get()
 
         ?>
 

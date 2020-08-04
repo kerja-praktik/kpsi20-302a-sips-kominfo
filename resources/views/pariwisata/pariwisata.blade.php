@@ -48,8 +48,8 @@
                                     <td align="center"><b>Bulan</td> 
                                     <td align="center"><b>Wisata Asing</td>
                                     <td align="center"><b>Wisata Nusantara</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
+                                    <td ><b>Tahun</td>
+                                   
                                    
                                 </thead>
                                 <tbody>
@@ -60,7 +60,7 @@
                                     <td align="center">{{number_format($tabel33->wisata_asing,0,",",".")}}</td>
                                     <td align="center">{{number_format($tabel33->wisata_nusantara,0,",",".")}}</td>
                                     <td align="center">{{$tabel33 -> tahun}}</td>
-                                    <td align="center">{{$tabel33 -> status}}</td>
+                                    
                                  
                     </tr>
                                     @endforeach

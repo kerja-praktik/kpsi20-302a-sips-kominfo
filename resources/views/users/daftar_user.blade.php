@@ -12,9 +12,9 @@
                         <h4 class="card-title" align="center">Daftar User</h4>
 
                         <div class="card-body table-full-width table-responsive">
-                            <table class="table table-hover table-striped">
+                            <table id = "user_table" class="table table-hover table-striped">
 
-                            <a href="/jumlah_penerima_bantuan_ternak/exportpdf7" class="btn btn-sm btn-warning"   >CETAK PDF</a>
+                          
                                 <thead>
                                     <td align="center"><b>No</td>
                                     <td align="center"><b>Nama Dinas</th>
@@ -42,6 +42,7 @@
 
                                 </tbody>
                             </table>
+                            {{ $daftar_user->links() }}
                         </div>
                     </div>
                 </div>
@@ -50,3 +51,23 @@
         </div>
     </div>
 @endsection
+
+    @push('scripts')
+    <script>
+    $(document).ready(function(){
+        $('#user_table').DataTable();
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{url('/get_daftar_user')}}"
+        },
+        columns: [
+            { data: 'nama_dinas', name: 'nama_dinas' },
+            { data: 'username', name: 'username' },
+            { data: 'email', name: 'email' },
+            { data: 'alamat_kantor', name: 'alamat_kantor' },
+            { data: 'nomor_telepon', name: 'nomor_telepon' }
+        ]
+    });
+    </script>
+    @endpush

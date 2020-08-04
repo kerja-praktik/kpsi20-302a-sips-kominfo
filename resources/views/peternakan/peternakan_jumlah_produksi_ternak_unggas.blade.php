@@ -69,12 +69,7 @@
                                     <td>{{number_format($tabel5->itik,0,",",".")}}</td>    
                                     <td>{{$tabel5->tahun}}</td>
                                     <!-- <td>{{$tabel5->status}}</td> -->
-                                    <td>
-                                    <a href="{{ url('/edit5/'.$tabel5->id) }}" class="btn btn-sm btn-success">Edit</a>
-                            &nbsp
                                    
-                            <a href="/peternakan_jumlah_produksi_ternak_unggas/hapus5/{{ $tabel5->id }}" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
                                     </tr>
                                     @endforeach
                                     <tr>

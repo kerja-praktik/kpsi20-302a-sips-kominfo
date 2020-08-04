@@ -5,8 +5,7 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-12">
-                    <div id="chart2">
-                </div>
+                   
                 
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">

@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h3 class="mb-0">{{ __('Tambahkan Data') }}</h3>
+                                    <h3 class="mb-0">{{ __('Edit Data') }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Simpan') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -98,6 +98,5 @@
                    
                 </div>
             </div>
-        </div>
-    </div>
+      
 @endsection                           

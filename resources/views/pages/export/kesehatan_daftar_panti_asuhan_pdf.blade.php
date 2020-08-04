@@ -44,7 +44,7 @@
 			</tr>
 			@endforeach
             <?php
-        $panti_asuhan = DB::table("kesehatan_daftar_panti_asuhan")->get()
+        $panti_asuhan = DB::table("kesehatan_daftar_panti_asuhan")->where('status', '=', 'Accepted')->get()
 
         ?>
 		</tbody>

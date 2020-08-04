@@ -78,8 +78,9 @@
                                     <td>
                                     <a href="{{ url('/edit22/'.$tabel22->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kependudukan_jumlah_akta/hapus/{{ $tabel22->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+
+                            <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kependudukan_jumlah_akta/hapus22/{{ $tabel22->id }}" >Hapus</a>     
                     </td>
                                     </tr>
                                 @endforeach
@@ -99,7 +100,6 @@
                         </div>
                     </div>
                 </div>
-  
             </div>
         </div>
         </div>

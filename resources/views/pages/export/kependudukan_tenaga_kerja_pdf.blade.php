@@ -20,7 +20,7 @@
     <table class="table table-hover table-striped">
 		<thead>
         <tr>                      
-            <td align="center" rowspan="2"><b>ID</td>
+            <td align="center" rowspan="2"><b>No</td>
             <td align="center" rowspan="2"><b>Kelompok Umur</td>
             <td align="center" colspan="3"><b>Angkatan Kerja</td>
             <td align="center" rowspan="2"><b>Bukan Angkatan Kerja</td>
@@ -64,7 +64,7 @@
 
 
             <?php
-        $$tenaga_kerja = DB::table("kependudukan_tenaga_kerja")->get()
+        $$tenaga_kerja = DB::table("kependudukan_tenaga_kerja")->where('status', '=', 'Accepted')->get()
     
       
         ?>

@@ -105,13 +105,7 @@
                                     <td align="center">{{number_format($tabel3->domba,0,",",".")}}</td>
                                     <td align="center">{{number_format($tabel3->babi,0,",",".")}}</td>    
                                     <td align="center">{{$tabel3->tahun}}</td>
-                                    <!-- <td align="center">{{$tabel3->status}}</td> -->
-                                    <td>
-                                    <a href="{{ url('/edit3/'.$tabel3->id) }}" class="btn btn-sm btn-success">Edit</a>
-                            &nbsp
                                    
-                            <a href="/peternakan_jumlah_ternak_dipotong/hapus3/{{ $tabel3->id }}" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
                                     </tr>
                                     @endforeach
 
@@ -140,9 +134,6 @@
   
             </div>
 
-
-
-            
         </div>
 
                     <nav aria-label="Page navigation example">

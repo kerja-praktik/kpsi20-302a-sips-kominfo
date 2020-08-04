@@ -60,13 +60,7 @@
                                         <td>{{number_format($tabel7->jumlah_ternak,0,",",".")}} Ekor</td>
                                       
                                         <td>{{$tabel7->tahun}}</td>
-                                        <!-- <td>{{$tabel7->status}}</td> -->
-                                        <!-- <td>
-                                        <a href="{{ url('/edit7/'.$tabel7->id) }}" class="btn btn-sm btn-success">Edit</a>
-                            &nbsp
-                                   
-                            <a href="/jumlah_penerima_bantuan_ternak/hapus7/{{ $tabel7->id }}" class="btn btn-sm btn-danger">Hapus</a>
-                                </td> -->
+                                      
                                     </tr>
                                     @endforeach
                                     

@@ -72,12 +72,7 @@
                                     <td>{{$tabel4->tahun}}</td>
                                     <!-- <td>{{$tabel4->status}}</td> -->
                        
-                                    <td>
-                                    <a href="{{ url('/edit4/'.$tabel4->id) }}" class="btn btn-sm btn-success">Edit</a>
-                            &nbsp
-                                   
-                            <a href="/peternakan_jumlah_ternak_unggas_dipotong/hapus4/{{ $tabel4->id }}" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
+                                    
                                     </tr>
                                     @endforeach
 

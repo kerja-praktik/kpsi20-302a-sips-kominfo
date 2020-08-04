@@ -1,4 +1,4 @@
-@extends('infrastruktur.app', ['activePage' => 'formulir-pembagian_penetapan_besaran_alokasi_dana_desa', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'formulir-pembagian_penetapan_besaran_alokasi_dana_desa', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -24,15 +24,29 @@
                                 
         
                                 <div class="pl-lg-4">
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                           
-                                            {{ __('Kecamatan') }}
-                                        </label>
-                                        <input type="text" name="kecamatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Kecamatan') }}" value="" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
+                                <div class="form-group">
+                                <label class="form-control-label" for="input-desa">
+                                {{ __('kecamatan') }}</label>
+                                                    <select name="kecamatan" class="form-control">
+                                                        <option value="Balige">Balige</option>
+                                                        <option value="Tampahan">Tampahan</option>
+                                                        <option value="Laguboti">Laguboti</option>
+                                                        <option value="Habinsaran">Habinsaran</option>
+                                                        <option value="Borbor">Borbor</option>
+                                                        <option value="Nassau">Nassau</option>
+                                                        <option value="Silaen">Silaen</option>
+                                                        <option value="Sigumpar">Sigumpar</option>
+                                                        <option value="Porsea">Porsea</option>
+                                                        <option value="Pintu Pohan Meranti">Pintu Pohan Meranti</option>
+                                                        <option value="Siantar Narumonda">Siantar Narumonda</option>
+                                                        <option value="Parmaksian">Parmaksian</option>
+                                                        <option value="Lumban Julu">Lumban Julu</option>
+                                                        <option value="Uluan">Uluan</option>
+                                                        <option value="Ajibata">Ajibata</option>
+                                                        <option value="Bonatua Lunasi">Bonatua Lunasi</option>
+                                                    </select>
+                                                </div>
+                                    
 
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
                                         <label class="form-control-label" for="input-desa">
@@ -73,6 +87,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+        
 @endsection                           

@@ -203,7 +203,10 @@
                             <div class="stats">
                                 <i class="now-ui-icons loader_refresh spin"></i> {{ __('Updated 3 minutes ago') }}
                             </div>
+
+                            <div id="map"></div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -44,8 +44,8 @@
                                     <td align="center"><b>Jumlah Kapal</td>
                                     <td align="center"><b>Jumlah Penumpang</td>
                                     <td align="center"><b>Jumlah Barang</td>
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
+                                    <td><b>Tahun</td>
+                                   
                                 </thead>
                                 <tbody>
                                     @foreach($tbl37 as $tabel37) 
@@ -56,7 +56,7 @@
                                     <td align="center">{{number_format($tabel37->jumlah_penumpang, 0, ",", ",")}}</td>
                                     <td align="center">{{number_format($tabel37->jumlah_barang, 0, ",", ",")}}</td>
                                     <td align="center">{{$tabel37 -> tahun}}</td>
-                                    <td align="center">{{$tabel37 -> status}}</td>
+                                 
                                   
                                     @endforeach
                                     <tr>

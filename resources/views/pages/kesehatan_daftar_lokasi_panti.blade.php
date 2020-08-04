@@ -44,8 +44,8 @@
                                     <td>
                                     <a href="{{ url('/edit31/'.$tabel31->id) }}" class="btn btn-sm btn-success">Edit</a>
                             &nbsp
-                                   
-                            <a href="/kesehatan_daftar_lokasi_panti/hapus/{{ $tabel31->id }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                             <a onclick="return confirm('Ingin Menghapus Data?')" class="btn btn-sm btn-danger" href="/kesehatan_daftar_lokasi_panti/hapus31/{{ $tabel31->id }}">Hapus</a>        
                     </td>
                                     </tr>
                                 @endforeach

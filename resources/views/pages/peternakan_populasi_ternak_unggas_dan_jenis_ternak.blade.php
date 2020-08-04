@@ -49,7 +49,7 @@
                         
 
                     <div class="col-12 text-right">
-                                <a href="{{url('/tambah_populasi_ternak_unggas')}}" class="btn btn-sm btn-default">Tambahkan Data</a>
+                                <a href="{{url('/tambah_populasi_ternak_unggas')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
                             </div>
                     
                                     

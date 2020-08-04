@@ -24,9 +24,9 @@
                                     <td><b>No</td>
                                     <td><b>Kecamatan</td>
                                     <td align="center"><b>Jumlah Menara</td>                                   
-                                    <td align="center"><b>Tahun</td>
-                                    <td align="center"><b>Status</td>
-                                    <td><b>Aksi</td>
+                                    <td ><b>Tahun</td>
+                                  
+                                    
                                 </thead>
                                 <tbody>
                                 @foreach($tbl15 as $tabel15)
@@ -35,13 +35,8 @@
                                     <td>{{$tabel15->kecamatan}}</td>
                                     <td align="center">{{$tabel15->jumlah_menara}}</td>                
                                     <td align="center">{{$tabel15->tahun}}</td>
-                                    <td align="center"  >{{$tabel15->status}}</td>
-                                    <td>
-                                    <a href="{{ url('/edit15/'.$tabel15->id) }}" class="btn btn-sm btn-success">Edit</a>
-                            &nbsp
-                                   
-                            <a href="/jumlah_menara/hapus15/{{ $tabel15->id }}" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
+                                  
+                                    
                                     </tr>
                                     @endforeach
 

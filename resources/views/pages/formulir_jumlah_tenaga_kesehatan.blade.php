@@ -20,7 +20,9 @@
                             {{ @csrf_field() }}
                                 
                                 <h6 class="heading-small text-muted mb-4">{{ __('Jumlah Tenaga Kesehatan Menurut Kecamatan') }}</h6>
-
+                                
+                                
+        
                                 <div class="pl-lg-4">
                                     <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
                                         <label class="form-control-label" for="input-name">
@@ -68,7 +70,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Tambah') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Tambah') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -80,6 +82,6 @@
                    
                 </div>
             </div>
-        </div>
-   
+            </div>
+       
 @endsection                           

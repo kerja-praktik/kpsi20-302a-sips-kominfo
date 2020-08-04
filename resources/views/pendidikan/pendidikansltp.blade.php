@@ -71,7 +71,7 @@
                                     <td align="center"><b>Negeri</td>
                                     <td align="center"><b>Swasta</td>
                                     <td align="center"><b>MI/MTs</td>
-                                    <td align="center"><b>Status</td>
+                                   
                                   
                                 </thead>
                                 <tbody>
@@ -86,7 +86,7 @@
                                     <td align="center">{{number_format($tabel41->negeri, 0, ",", ",")}}</td>
                                     <td align="center">{{number_format($tabel41->swasta, 0, ",", ",")}}</td>
                                     <td align="center">{{number_format($tabel41->Madrasah_Ibtidaiyah_Tsanawiyah, 0, ",", ",")}}</td>
-                                    <td align="center">{{$tabel41 -> status}}</td>
+                                  
                                   
                     </tr>
                                     @endforeach
@@ -111,6 +111,7 @@
 
             </div>
         </div>
+        </div>
          <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -126,7 +127,7 @@
             </li>
         </ul>
         </nav>
-    </div>
+    
 @endsection
 
 

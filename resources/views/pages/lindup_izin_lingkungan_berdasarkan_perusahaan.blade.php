@@ -252,6 +252,6 @@ Highcharts.chart('chart3', {
     }]
 });
    
-    // });
+    
     </script>
 @stop

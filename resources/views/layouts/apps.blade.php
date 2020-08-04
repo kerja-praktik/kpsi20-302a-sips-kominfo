@@ -41,9 +41,9 @@
             @endif
 
             <div class="@if (auth()->check() && request()->route()->getName() != "") main-panel @endif">
-                @include('layouts.navbars.navbar')
+            @include('layouts.navbars.navbar')
                 @yield('content')
-                @include('layouts.footer.nav')
+               
             </div>
 
         </div>
