@@ -588,30 +588,32 @@ Route::group(['middleware'=>'pemerintahan'],function (){
 
 Route::group(['middleware'=>'kependudukan'],function (){
 	Route::get('/kependudukan_jumlah_penduduk', 'KependudukanController@index1')->name('kependudukan_jumlah_penduduk');
+	
+
 	Route::get('/home', 'HomeController@KependudukanHome');
-	Route::get('/tambah_jumlah_penduduk', 'KependudukanController@formulir21');
+	Route::get('/tambah_jumlah_penduduk', 'KependudukanController@formulir21')->name('tambah_jumlah_penduduk');
 	Route::post('/formulir/tambah_jumlah_penduduk', 'KependudukanController@tambah21');
-	Route::get('/kependudukan_jumlah_penduduk/hapus/{id}','KependudukanController@hapus21');
-	Route::get('edit21/{id}','KependudukanController@edit21');
+	Route::get('/kependudukan_jumlah_penduduk/hapus21/{id}','KependudukanController@hapus21');
+	Route::get('edit21/{id}','KependudukanController@edit21')->name('edit21');
 	Route::put('/update21/{id}','KependudukanController@update21');
 	Route::get('/kependudukan_jumlah_penduduk/exportpdf21','KependudukanController@exportpdf21');
 
 	//kependudukan jumlah akta
 	Route::get('/kependudukan_jumlah_akta', 'KependudukanController@index2')->name('kependudukan_jumlah_akta');
-	Route::get('/tambah_jumlah_akta', 'KependudukanController@formulir22');
+	Route::get('/tambah_jumlah_akta', 'KependudukanController@formulir22')->name('tambah_jumlah_akta');
 	Route::post('/formulir/tambah_jumlah_akta', 'KependudukanController@tambah22');
-	Route::get('/kependudukan_jumlah_akta/hapus/{id}','KependudukanController@hapus22');
-	Route::get('edit22/{id}','KependudukanController@edit22');
+	Route::get('/kependudukan_jumlah_akta/hapus22/{id}','KependudukanController@hapus22');
+	Route::get('edit22/{id}','KependudukanController@edit22')->name('edit22');
 	Route::put('/update22/{id}','KependudukanController@update22');
 	Route::get('/kependudukan_jumlah_akta/exportpdf22','KependudukanController@exportpdf22');
 
 
 	//kependudukan tenaga kerja 
 	Route::get('/kependudukan_tenaga_kerja', 'KependudukanController@index3')->name('kependudukan_tenaga_kerja');
-	Route::get('/tambah_jumlah_kerja', 'KependudukanController@formulir23');
+	Route::get('/tambah_jumlah_kerja', 'KependudukanController@formulir23')->name('tambah_jumlah_kerja');
 	Route::post('/formulir/jumlah_tenaga_kerja', 'KependudukanController@tambah23');
-	Route::get('/kependudukan_tenaga_kerja/hapus/{id}','KependudukanController@hapus23');
-	Route::get('edit23/{id}','KependudukanController@edit23');
+	Route::get('/kependudukan_tenaga_kerja/hapus23/{id}','KependudukanController@hapus23');
+	Route::get('edit23/{id}','KependudukanController@edit23')->name('edit23');
 	Route::put('/update23/{id}','KependudukanController@update23');
 	Route::get('/kependudukan_tenaga_kerja/exportpdf23','KependudukanController@exportpdf23');
 
@@ -623,7 +625,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/home', 'HomeController@KesehatanHome');
 	Route::get('/tambah_rekapitulasi_penyandang_masalah', 'KesehatanController@formulir24')->name('tambah_rekapitulasi_penyandang_masalah');
 	Route::post('/formulir/rekapitulasi_penyandang_masalah', 'KesehatanController@tambah24');
-	Route::get('/kesehatan_rekapitulasi_penyandang_masalah/hapus/{id}','KesehatanController@hapus24');
+	Route::get('/kesehatan_rekapitulasi_penyandang_masalah/hapus24/{id}','KesehatanController@hapus24');
 	Route::get('edit24/{id}','KesehatanController@edit24')->name('edit24');
 	Route::put('/update24/{id}','KesehatanController@update24');
 	
@@ -632,7 +634,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_jumlah_dokter', 'KesehatanController@index2')->name('kesehatan_jumlah_dokter');
 	Route::get('/tambah_jumlah_dokter', 'KesehatanController@formulir25')->name('tambah_jumlah_dokter');
 	Route::post('/formulir/jumlah_dokter', 'KesehatanController@tambah25');
-	Route::get('/kesehatan_jumlah_dokter/hapus/{id}','KesehatanController@hapus25');
+	Route::get('/kesehatan_jumlah_dokter/hapus25/{id}','KesehatanController@hapus25');
 	Route::get('edit25/{id}','KesehatanController@edit25')->name('edit25');
 	Route::put('/update25/{id}','KesehatanController@update25');
 	
@@ -640,7 +642,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_jumlah_tenaga_kesehatan', 'KesehatanController@index3')->name('kesehatan_jumlah_tenaga_kesehatan');
 	Route::get('/tambah_jumlah_tenaga_kesehatan', 'KesehatanController@formulir26')->name('kesehatan_jumlah_tenaga_kesehatan');
 	Route::post('/formulir/jumlah_tenaga_kesehatan', 'KesehatanController@tambah26');
-	Route::get('/kesehatan_jumlah_tenaga_kesehatan/hapus/{id}','KesehatanController@hapus26');
+	Route::get('/kesehatan_jumlah_tenaga_kesehatan/hapus26/{id}','KesehatanController@hapus26');
 	Route::get('edit26/{id}','KesehatanController@edit26')->name('kesehatan_jumlah_tenaga_kesehatan');
 	Route::put('/update26/{id}','KesehatanController@update26');
 
@@ -650,7 +652,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_jumlah_fasilitas_kesehatan', 'KesehatanController@index4')->name('kesehatan_jumlah_fasilitas_kesehatan');
 	Route::get('/tambah_jumlah_fasilitas_kesehatan', 'KesehatanController@formulir27')->name('tambah_jumlah_fasilitas_kesehatan');
 	Route::post('/formulir/jumlah_fasilitas_kesehatan', 'KesehatanController@tambah27');
-	Route::get('/kesehatan_jumlah_fasilitas_kesehatan/hapus/{id}','KesehatanController@hapus27');
+	Route::get('/kesehatan_jumlah_fasilitas_kesehatan/hapus27/{id}','KesehatanController@hapus27');
 	Route::get('edit27/{id}','KesehatanController@edit27')->name('edit27');
 	Route::put('/update27/{id}','KesehatanController@update27');
 	
@@ -659,17 +661,17 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_jumlah_kasus_penyakit', 'KesehatanController@index5')->name('kesehatan_jumlah_kasus_penyakit');
 	Route::get('/tambah_jumlah_kasus_penyakit', 'KesehatanController@formulir28')->name('tambah_jumlah_kasus_penyakit');
 	Route::post('/formulir/jumlah_kasus_penyakit', 'KesehatanController@tambah28');
-	Route::get('//kesehatan_jumlah_kasus_penyakit/hapus/{id}','KesehatanController@hapus28');
+	Route::get('//kesehatan_jumlah_kasus_penyakit/hapus28/{id}','KesehatanController@hapus28');
 	Route::get('edit28/{id}','KesehatanController@edit28')->name('edit28');
 	Route::put('/update28/{id}','KesehatanController@update28');
 	
-
+ 
 
 	//kesehatan jumlah akseptor
 	Route::get('/kesehatan_jumlah_akseptor_aktif', 'KesehatanController@index6')->name('kesehatan_jumlah_akseptor_aktif');
 	Route::get('/tambah_jumlah_akseptor', 'KesehatanController@formulir29')->name('tambah_jumlah_akseptor');
 	Route::post('/formulir/jumlah_akseptor', 'KesehatanController@tambah29');
-	Route::get('/kesehatan_jumlah_akseptor_aktif/hapus/{id}','KesehatanController@hapus29');
+	Route::get('/kesehatan_jumlah_akseptor_aktif/hapus29/{id}','KesehatanController@hapus29');
 	Route::get('edit29/{id}','KesehatanController@edit29')->name('edit29');
 	Route::put('/update29/{id}','KesehatanController@update29');
 	
@@ -678,7 +680,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_jumlah_bayi_lahir', 'KesehatanController@index7')->name('kesehatan_jumlah_bayi_lahir');
 	Route::get('/tambah_jumlah_bayi_lahir', 'KesehatanController@formulir30')->name('tambah_jumlah_bayi_lahir');
 	Route::post('/formulir/jumlah_bayi_lahir_bblr', 'KesehatanController@tambah30');
-	Route::get('/kesehatan_jumlah_bayi_lahir/hapus/{id}','KesehatanController@hapus30');
+	Route::get('/kesehatan_jumlah_bayi_lahir/hapus30/{id}','KesehatanController@hapus30');
 	Route::get('edit30/{id}','KesehatanController@edit30')->name('edit30');
 	Route::put('/update30/{id}','KesehatanController@update30');
 	
@@ -687,7 +689,7 @@ Route::group(['middleware'=>'kesehatan'],function (){
 	Route::get('/kesehatan_daftar_lokasi_panti', 'KesehatanController@index8')->name('kesehatan_daftar_lokasi_panti');
 	Route::get('/tambah_daftar_panti_asuhan', 'KesehatanController@formulir31')->name('tambah_daftar_panti_asuhan');
 	Route::post('/formulir/daftar_panti_asuhan', 'KesehatanController@tambah31');
-	Route::get('/kesehatan_daftar_lokasi_panti/hapus/{id}','KesehatanController@hapus31');
+	Route::get('/kesehatan_daftar_lokasi_panti/hapus31/{id}','KesehatanController@hapus31');
 	Route::get('edit31/{id}','KesehatanController@edit31')->name('edit31');
 	Route::put('/update31/{id}','KesehatanController@update31');
 
@@ -1180,6 +1182,12 @@ Route::get('/kependudukan_jumlah_penduduk1','KependudukanController@kependudukan
 Route::get('/kependudukan_jumlah_akta1','KependudukanController@kependudukan2')->name('kependudukan_jumlah_akta1');
 Route::get('/kependudukan_tenaga_kerja1','KependudukanController@kependudukan3')->name('kependudukan_tenaga_kerja1');
 
+//pegawai
+Route::get('/pegawai_menurut_jenis_kelamin1','PegawaiController@pegawai1')->name('pegawai_menurut_jenis_kelamin1');
+Route::get('/pegawai_menurut_golongan1','PegawaiController@pegawai2')->name('pegawai_menurut_golongan1');
+Route::get('/pegawai_menurut_pendidikan1','PegawaiController@pegawai3')->name('pegawai_menurut_pendidikan1');
+Route::get('/pegawai_yang_pindah_pensiun1','PegawaiController@pegawai4')->name('pegawai_yang_pindah_pensiun1');
+
 //Peternakan
 Route::get('/peternakan_populasi_ternak_besar1','PeternakanController@peternakan1')->name('peternakan_populasi_ternak_besar1');
 Route::get('/peternakan_populasi_ternak_unggas_dan_jenis_ternak1','PeternakanController@peternakan2')->name('peternakan_populasi_ternak_unggas_dan_jenis_ternak1');
@@ -1248,18 +1256,6 @@ Route::get('/rekapitulasi_data_menara/exportpdf16','PerindustrianController@expo
 Route::get('/daftar_internet_dan_game_monitoring/exportpdf17','PerindustrianController@exportpdf17');
 Route::get('/jumlah_desa_blank_spot/exportpdf18','PerindustrianController@exportpdf18');
 
-Route::get('/kependudukan_jumlah_penduduk/exportpdf21','KependudukanController@exportpdf21');
-Route::get('/kependudukan_jumlah_akta/exportpdf22','KependudukanController@exportpdf22');
-Route::get('/kependudukan_tenaga_kerja/exportpdf23','KependudukanController@exportpdf23');
-
-Route::get('/kesehatan_penyandang_masalah/exportpdf24','KesehatanController@exportpdf24');
-Route::get('/kesehatan_jumlah_dokter/exportpdf25','KesehatanController@exportpdf25');
-Route::get('/kesehatan_jumlah_tenaga_kesehatan/exportpdf26','KesehatanController@exportpdf26');
-Route::get('/kesehatan_jumlah_fasilitas_kesehatan/exportpdf27','KesehatanController@exportpdf27');
-Route::get('/kesehatan_jumlah_kasus_penyakit/exportpdf28','KesehatanController@exportpdf28');
-Route::get('/kesehatan_jumlah_akseptor_aktif/exportpdf29','KesehatanController@exportpdf29');
-Route::get('/kesehatan_jumlah_bayi/exportpdf30','KesehatanController@exportpdf30');
-Route::get('/kesehatan_daftar_panti_asuhan/exportpdf31','KesehatanController@exportpdf31');
 
 Route::get('/pariwisata/exportpdf33','PariwisataController@exportpdf33');
 Route::get('/pariwisatahotel/exportpdf34','PariwisataController@exportpdf34');
@@ -1290,18 +1286,24 @@ Route::get('/tenaga_dokter2/exportpdf62','RSUDController@exportpdf62');
 Route::get('/peralatan_rumah_sakit2/exportpdf63','RSUDController@exportpdf63');
 Route::get('/perawat_penyakit2/exportpdf64','RSUDController@exportpdf64');
 
-//export pegawai
+//export kependudukan kesehatan pegawai 
+Route::get('/kependudukan_jumlah_penduduk/exportpdf21','KependudukanController@exportpdf21');
+Route::get('/kependudukan_jumlah_akta/exportpdf22','KependudukanController@exportpdf22');
+Route::get('/kependudukan_tenaga_kerja/exportpdf23','KependudukanController@exportpdf23');
+
+Route::get('/kesehatan_penyandang_masalah/exportpdf24','KesehatanController@exportpdf24');
+Route::get('/kesehatan_jumlah_dokter/exportpdf25','KesehatanController@exportpdf25');
+Route::get('/kesehatan_jumlah_tenaga_kesehatan/exportpdf26','KesehatanController@exportpdf26');
+Route::get('/kesehatan_jumlah_fasilitas_kesehatan/exportpdf27','KesehatanController@exportpdf27');
+Route::get('/kesehatan_jumlah_kasus_penyakit/exportpdf28','KesehatanController@exportpdf28');
+Route::get('/kesehatan_jumlah_akseptor_aktif/exportpdf29','KesehatanController@exportpdf29');
+Route::get('/kesehatan_jumlah_bayi/exportpdf30','KesehatanController@exportpdf30');
+Route::get('/kesehatan_daftar_panti_asuhan/exportpdf31','KesehatanController@exportpdf31');
+
 Route::get('/pegawai_menurut_jenis_kelamin/exportpdf53','PegawaiController@exportpdf53');
 Route::get('/pegawai_menurut_golongan/exportpdf54','PegawaiController@exportpdf54');
 Route::get('/pegawai_menurut_pendidikan/exportpdf55','PegawaiController@exportpdf55');
 Route::get('/pegawai_yang_pindah_pensiun/exportpdf56','PegawaiController@exportpdf56');
-
-//pegawai
-Route::get('/pegawai_menurut_jenis_kelamin1','PegawaiController@pegawai1')->name('pegawai_menurut_jenis_kelamin1');
-Route::get('/pegawai_menurut_golongan1','PegawaiController@pegawai2')->name('pegawai_menurut_golongan1');
-Route::get('/pegawai_menurut_pendidikan1','PegawaiController@pegawai3')->name('pegawai_menurut_pendidikan1');
-Route::get('/pegawai_yang_pindah_pensiun1','PegawaiController@pegawai4')->name('pegawai_yang_pindah_pensiun1');
-
 
 });
 

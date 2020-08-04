@@ -45,7 +45,6 @@
        <td align="center">{{number_format($pegawai_menurut_golongan->pendidikan4, 0, ".", ".")}}</td>
        <td align="center">{{number_format($pegawai_menurut_golongan->pendidikan1+$pegawai_menurut_golongan->pendidikan2+$pegawai_menurut_golongan->pendidikan3+$pegawai_menurut_golongan->pendidikan4, 0, ".", ".")}}</td>
  
-       <td align="center">{{$pegawai_menurut_golongan->tahun}}</td>
 
 			</tr>
 			@endforeach

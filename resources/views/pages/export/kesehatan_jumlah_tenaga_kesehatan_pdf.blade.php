@@ -50,7 +50,7 @@
 			</tr>
 			@endforeach
             <?php
-        $tenaga_kesehatan = DB::table("kesehatan_jumlah_tenaga_kesehatan")->get()
+        $tenaga_kesehatan = DB::table("kesehatan_jumlah_tenaga_kesehatan")->where('status', '=', 'Accepted')->get()
 
         ?>
 

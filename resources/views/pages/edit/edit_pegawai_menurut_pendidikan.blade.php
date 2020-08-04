@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'formulir_jumlah_akta', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'formulir_pegawai_menurut_pendidikan', 'title' => 'Sistem Informasi Pusat Statistik', 'navName' => 'Table List', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -16,68 +16,85 @@
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="{{url('/update30',$tabel30->id)}}" method="post" class="account-form">                   
+                        <form action="{{url('/update55',$tabel55->id)}}" method="post" class="account-form">                   
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type = "hidden" name = "status" value = "Requested">
                         {{method_field('PUT')}}
                                 
-                                <h6 class="heading-small text-muted mb-4">{{ __('Jumlah Bayi Lahir, Bayi Berat Badan Lahir Rendah (BBLR)') }}</h6>
+                                <h6 class="heading-small text-muted mb-4">{{ __('Jumlah Pegawai Negeri Sipil Menurut Jenis Kelamin') }}</h6>
                                 <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Kecamatan') }}
-                                        </label>
-                                        <input type="text" name="kecamatan" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Kecamatan') }}" value="{{ $tabel30->kecamatan}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('Bayi Lahir') }}
-                                        </label>
-                                        <input type="text" name="bayi_lahir" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Bayi Lahir') }}" value="{{ $tabel30->bayi_lahir}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('BBLR Jumlah') }}
-                                        </label>
-                                        <input type="text" name="BBLR_jumlah" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah BBLR Jumlah') }}" value="{{ $tabel30->BBLR_jumlah}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('BBLR Dirujuk') }}
-                                        </label>
-                                        <input type="text" name="BBLR_dirujuk" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah BBLR Dirujuk') }}" value="{{ $tabel30->BBLR_dirujuk}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
-                                        <label class="form-control-label" for="input-name">
-                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
-                                            {{ __('BBLR Giji Buruk') }}
-                                        </label>
-                                        <input type="text" name="BBLR_giji_buruk" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah BBLR Giji Buruk') }}" value="{{ $tabel30->BBLR_giji_buruk}}" required autofocus>
-        
-                                        @include('alerts.feedback', ['field' => 'name'])
-                                    </div>
-                                   
-                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
                                         <label class="form-control-label" for="input-name">
                                             <!-- <i class="w3-xxlarge fa fa-user"></i> -->
                                             {{ __('Tahun') }}
                                         </label>
-                                        <input type="text" name="tahun" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Tahun') }}" value="{{ $tabel30->tahun}}" required autofocus>
+                                        <input type="text" name="tahun" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Tahun') }}" value="{{ $tabel55->tahun}}" required autofocus>
         
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan SD') }}
+                                        </label>
+                                        <input type="text" name="sd" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan SD') }}" value="{{ $tabel55->sd}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan SMP') }}
+                                        </label>
+                                        <input type="text" name="smp" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan SMP') }}" value="{{ $tabel55->smp}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan SMA') }}
+                                        </label>
+                                        <input type="text" name="sma" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan SMA') }}" value="{{ $tabel55->sma}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan S1') }}
+                                        </label>
+                                        <input type="text" name="s1" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan S1') }}" value="{{ $tabel55->s1}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan S2') }}
+                                        </label>
+                                        <input type="text" name="s2" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan S2') }}" value="{{ $tabel55->s2}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Pendidikan S3') }}
+                                        </label>
+                                        <input type="text" name="s3" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai Pendidikan S3') }}" value="{{ $tabel55->s3}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    <div class="form-group{{ $errors->has('') ? ' has-danger' : 'name' }}">
+                                        <label class="form-control-label" for="input-name">
+                                            <!-- <i class="w3-xxlarge fa fa-user"></i> -->
+                                            {{ __('Jumlah/Total') }}
+                                        </label>
+                                        <input type="text" name="jumlah_total" id="input-name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Jumlah Pegawai') }}" value="{{ $tabel55->jumlah_total}}" required autofocus>
+        
+                                        @include('alerts.feedback', ['field' => 'name'])
+                                    </div>
+                                    
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary mt-4">{{ __('Simpan') }}</button>
                                     </div>
@@ -86,10 +103,7 @@
                             <hr class="my-4" />
                             
                         </div>
-                    </div>
-
-                   
-                </div>
             </div>
-        
+        </div>
+    </div>
 @endsection                           

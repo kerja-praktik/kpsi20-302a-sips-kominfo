@@ -49,7 +49,6 @@
        <td align="center">{{number_format($pegawai_menurut_pendidikan->s3, 0, ".", ".")}}</td>
        <td align="center">{{number_format($pegawai_menurut_pendidikan->jumlah_total, 0, ".", ".")}}</td>
  
-       <td align="center">{{$pegawai_menurut_pendidikan->tahun}}</td>
 
 			</tr>
 			@endforeach

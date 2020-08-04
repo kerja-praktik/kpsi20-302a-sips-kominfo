@@ -90,6 +90,7 @@
                                     <td></td>
                                 </tbody>
                             </table>
+                            {{ $tbl22->links() }}
                         </div>
                     </div>
                 </div>

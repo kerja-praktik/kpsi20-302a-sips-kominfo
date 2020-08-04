@@ -52,7 +52,7 @@
 			</tr>
 			@endforeach
             <?php
-        $penduduk = DB::table("kependudukan_jumlah_penduduk")->get()
+        $penduduk = DB::table("kependudukan_jumlah_penduduk")->where('status', '=', 'Accepted')->get()
 
         ?>
 
@@ -60,9 +60,9 @@
         <td></td>
                                     <td scope="row"><b><b>Jumlah</td><b><b>
                                  
-                                    <td>{{number_format($penduduk->sum("laki_laki"), 0, ".", ".")}}</td>    
-                                    <td>{{number_format($penduduk->sum("perempuan"), 0, ".", ".")}}</td>
-                                    <td></td>
+                                    <td align="center">{{number_format($penduduk->sum("laki_laki"), 0, ".", ".")}}</td>    
+                                    <td align="center">{{number_format($penduduk->sum("perempuan"), 0, ".", ".")}}</td>
+                                    <td align="center">{{number_format($penduduk->sum("laki_laki")+$penduduk->sum("perempuan"), 0, ".", ".")}}</td>
                                     <td></td>    
                                     <td></td>
         </tr>

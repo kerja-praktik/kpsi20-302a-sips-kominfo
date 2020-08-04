@@ -54,7 +54,7 @@
                         <h4 class="card-title" align="center">Jumlah Pegawai Negeri Sipil Menurut Pendidikan</h4>
                         <div class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">
-                            <a href="/pegawai_yang_pindah_pensiun/exportpdf55" class="btn btn-sm btn-warning"   >CETAK PDF</a>
+                            <a href="/pegawai_menurut_pendidikan/exportpdf55" class="btn btn-sm btn-warning"   >CETAK PDF</a>
                             <thead>
                                 <tr>  
                                 

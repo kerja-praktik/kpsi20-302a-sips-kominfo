@@ -37,7 +37,6 @@
                             </div> 
                                
                         </div>
-                        </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -47,8 +46,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    </div>
-                      
+                  
                         <h4 class="card-title" align="center">Angka Partisipasi Angkatan Kerja (APAK)</h4>
                         <div class="col-12 text-right">
                                 <a href="{{url('/tambah_jumlah_kerja')}}" class="btn btn-sm btn-primary">Tambahkan Data</a>
@@ -103,10 +101,12 @@
                                 </tbody>
                             </table>
                         {{ $tbl23->links() }} 
+                        </div>
                     </div>
                 </div>
              </div>
-        </div>
+             </div>
+    </div>
 @endsection
 @section('chart')
 <script src="https://code.highcharts.com/highcharts.js"></script>

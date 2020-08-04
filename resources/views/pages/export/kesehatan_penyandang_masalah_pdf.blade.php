@@ -60,7 +60,7 @@
 			</tr>
 			@endforeach
             <?php
-        $penyandang_masalah = DB::table("kesehatan_penyandang_masalah_kesejahteraan_sosial")->get()
+        $penyandang_masalah = DB::table("kesehatan_penyandang_masalah_kesejahteraan_sosial")->where('status', '=', 'Accepted')->get()
 
         ?>
 

@@ -49,7 +49,7 @@
 			</tr>
 			@endforeach
             <?php
-        $dokter = DB::table("kesehatan_jumlah_dokter")->get()
+        $dokter = DB::table("kesehatan_jumlah_dokter")->where('status', '=', 'Accepted')->get()
 
         ?>
 

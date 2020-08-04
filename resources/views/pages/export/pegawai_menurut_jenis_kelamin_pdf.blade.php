@@ -39,14 +39,13 @@
        <td align="center">{{$pegawai_menurut_jenis_kelamin->tahun}}</td>
        <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->laki_laki, 0, ".", ".")}}</td>
        <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->perempuan, 0, ".", ".")}}</td>
-       <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->jumlah_total, 0, ".", ".")}}</td>
- 
-       <td align="center">{{$pegawai_menurut_jenis_kelamin->tahun}}</td>
+       <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->laki_laki+$pegawai_menurut_jenis_kelamin->perempuan, 0, ".", ".")}}</td>
+
 
 			</tr>
 			@endforeach
             <?php
-        $pegawai_menurut_jenis_kelamin = DB::table("pegawai_menurut_jenis_kelamin")->get()
+        $pegawai_menurut_jenis_kelamin = DB::table("pegawai_menurut_jenis_kelamin")->where('status', '=', 'Accepted')->get()
 
         ?>
 
@@ -56,7 +55,7 @@
                                  
                                     <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->sum("laki_laki"), 0, ".", ".")}}</td>    
                                     <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->sum("perempuan"), 0, ".", ".")}}</td>
-                                    <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->sum("jumlah_total"), 0, ".", ".")}}</td>
+                                    <td align="center">{{number_format($pegawai_menurut_jenis_kelamin->sum("laki_laki")+$pegawai_menurut_jenis_kelamin->sum("perempuan"), 0, ".", ".")}}</td>
                
         </tr>
 		</tbody>

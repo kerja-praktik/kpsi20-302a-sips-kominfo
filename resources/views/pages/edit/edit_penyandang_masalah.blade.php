@@ -132,7 +132,7 @@
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-default mt-4">{{ __('Edit') }}</button>
+                                        <button type="submit" class="btn btn-primary mt-4">{{ __('Edit') }}</button>
                                     </div>
                                 </div>
                             </form>

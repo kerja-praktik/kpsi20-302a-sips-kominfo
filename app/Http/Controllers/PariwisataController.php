@@ -2024,7 +2024,7 @@ class PariwisataController extends Controller
             'jumlahpendidikan1','jumlahpendidikan2','jumlahpendidikan3','jumlahpendidikan4','jumlahpendidikan5','jumlahsd','jumlahsd1',
             'jumlahsd2','jumlahsd3','jumlahsd4','jumlahsd5','jumlahsltp','jumlahsltp1','jumlahsltp2','jumlahsltp3','jumlahsltp4',
             'jumlahsltp5','data39','data39a','data39b','data39c','data39d','data39e','data40','data40a','data40b','data40c','data40d',
-            'data40e','data41','data41a','data41b','data41c','data41d','data41e',
+            'data40e','data41','data41a','data41b','data41c','data41d','data41e'
     ));
         
     }

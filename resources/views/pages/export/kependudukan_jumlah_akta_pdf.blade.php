@@ -48,7 +48,7 @@
 
 
             <?php
-        $$akta = DB::table("kependudukan_jumlah_akta")->get()
+        $$akta = DB::table("kependudukan_jumlah_akta")->where('status', '=', 'Accepted')->get()
         ?>
 
             <tr>

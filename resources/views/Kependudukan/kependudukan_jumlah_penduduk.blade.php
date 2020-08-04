@@ -54,6 +54,7 @@
                                     <td></td>
                                 </tbody>
                             </table>
+                            {{ $tbl21->links() }}
                         </div>
                     </div>
                 </div>
