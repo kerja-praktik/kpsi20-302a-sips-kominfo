@@ -1472,7 +1472,7 @@ class PariwisataController extends Controller
         
     }
 
-}
+} 
 
     public function index(Request $request)
     {
@@ -1882,7 +1882,7 @@ class PariwisataController extends Controller
             'jumlahpendidikan1','jumlahpendidikan2','jumlahpendidikan3','jumlahpendidikan4','jumlahpendidikan5','jumlahsd','jumlahsd1',
             'jumlahsd2','jumlahsd3','jumlahsd4','jumlahsd5','jumlahsltp','jumlahsltp1','jumlahsltp2','jumlahsltp3','jumlahsltp4',
             'jumlahsltp5','data39','data39a','data39b','data39c','data39d','data39e','data40','data40a','data40b','data40c','data40d',
-            'data40e','data41','data41a','data41b','data41c','data41d','data41e',
+            'data40e','data41','data41a','data41b','data41c','data41d','data41e'
     ));
         
     }
@@ -2024,7 +2024,7 @@ class PariwisataController extends Controller
             'jumlahpendidikan1','jumlahpendidikan2','jumlahpendidikan3','jumlahpendidikan4','jumlahpendidikan5','jumlahsd','jumlahsd1',
             'jumlahsd2','jumlahsd3','jumlahsd4','jumlahsd5','jumlahsltp','jumlahsltp1','jumlahsltp2','jumlahsltp3','jumlahsltp4',
             'jumlahsltp5','data39','data39a','data39b','data39c','data39d','data39e','data40','data40a','data40b','data40c','data40d',
-            'data40e','data41','data41a','data41b','data41c','data41d','data41e',
+            'data40e','data41','data41a','data41b','data41c','data41d','data41e'
     ));
         
     }
@@ -2166,7 +2166,7 @@ class PariwisataController extends Controller
             'jumlahpendidikan1','jumlahpendidikan2','jumlahpendidikan3','jumlahpendidikan4','jumlahpendidikan5','jumlahsd','jumlahsd1',
             'jumlahsd2','jumlahsd3','jumlahsd4','jumlahsd5','jumlahsltp','jumlahsltp1','jumlahsltp2','jumlahsltp3','jumlahsltp4',
             'jumlahsltp5','data39','data39a','data39b','data39c','data39d','data39e','data40','data40a','data40b','data40c','data40d',
-            'data40e','data41','data41a','data41b','data41c','data41d','data41e',
+            'data40e','data41','data41a','data41b','data41c','data41d','data41e'
     ));
         
     }
@@ -15643,7 +15643,6 @@ class PariwisataController extends Controller
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -15652,7 +15651,7 @@ class PariwisataController extends Controller
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -15671,7 +15670,6 @@ class PariwisataController extends Controller
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl35a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -15688,7 +15686,7 @@ class PariwisataController extends Controller
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl35a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -15697,8 +15695,6 @@ class PariwisataController extends Controller
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -15718,7 +15714,7 @@ class PariwisataController extends Controller
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
             $data34[] = $tabel37a->jumlah_kapal;
             $data34a[] = $tabel37a->jumlah_penumpang;
@@ -15726,7 +15722,6 @@ class PariwisataController extends Controller
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -15734,7 +15729,7 @@ class PariwisataController extends Controller
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -16020,7 +16015,7 @@ class PariwisataController extends Controller
             'jumlah_desa','jumlah_kepadatan_penduduk','jumlah_luas_wilayah',
             'jumlah_penduduk','tbl43', 'i', 'tbl44', 'tbl45', 'tbl46', 
             'tbl47', 'tbl48', 'tbl49', 'tbl50', 'tbl51', 'tbl52', 'jumlah_alokasi_formula', 
-            'jumlah_pengguna_dana_desa', 'tabel2', 'tbl33a', 'tbl35a', 'tbl37a', 'tbl38a'));
+            'jumlah_pengguna_dana_desa', 'tabel2'));
     }
     public function hapus33($id)
 {
@@ -17369,7 +17364,6 @@ public function update38(Request $request, $id){
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -17378,7 +17372,7 @@ public function update38(Request $request, $id){
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -17397,7 +17391,6 @@ public function update38(Request $request, $id){
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -17414,7 +17407,7 @@ public function update38(Request $request, $id){
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -17423,8 +17416,6 @@ public function update38(Request $request, $id){
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -17444,15 +17435,14 @@ public function update38(Request $request, $id){
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -17460,13 +17450,13 @@ public function update38(Request $request, $id){
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
         //pendidikan
         $tbl39=DB::table('pendidikan_paud')->paginate(10);
-        $categories39 = [];
+ $categories39 = [];
         $data39 = [];
         $data39a = [];
         $data39b = [];
@@ -18813,7 +18803,6 @@ public function update38(Request $request, $id){
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -18822,7 +18811,7 @@ public function update38(Request $request, $id){
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -18841,7 +18830,6 @@ public function update38(Request $request, $id){
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -18858,7 +18846,7 @@ public function update38(Request $request, $id){
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -18867,8 +18855,6 @@ public function update38(Request $request, $id){
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -18888,15 +18874,14 @@ public function update38(Request $request, $id){
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -18904,7 +18889,7 @@ public function update38(Request $request, $id){
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -21697,7 +21682,6 @@ public function index5(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -21706,7 +21690,7 @@ public function index5(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -21725,7 +21709,6 @@ public function index5(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -21742,7 +21725,7 @@ public function index5(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -21751,8 +21734,6 @@ public function index5(Request $request)
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -21772,15 +21753,14 @@ public function index5(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -21788,7 +21768,7 @@ public function index5(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -23142,7 +23122,6 @@ public function index6(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -23151,7 +23130,7 @@ public function index6(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -23170,7 +23149,6 @@ public function index6(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -23187,7 +23165,7 @@ public function index6(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -23196,8 +23174,6 @@ public function index6(Request $request)
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -23217,15 +23193,14 @@ public function index6(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -23233,7 +23208,7 @@ public function index6(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -24584,8 +24559,7 @@ public function pariwisata1(Request $request)
 
         //pendidikan dan pariwisata
 
-        $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
+        $tbl33=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->paginate(10);
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -24594,7 +24568,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -24613,7 +24587,6 @@ public function pariwisata1(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -24630,7 +24603,7 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -24639,8 +24612,6 @@ public function pariwisata1(Request $request)
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -24660,15 +24631,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -24676,7 +24646,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -26000,7 +25970,6 @@ public function pariwisata1(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -26009,7 +25978,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -26020,7 +25989,7 @@ public function pariwisata1(Request $request)
             $jumlahnusantara+=$tabel33a->wisata_nusantara;
         }
 
-        $tbl34=DB::table('pariwisata_hotel')->paginate(10);
+        $tbl34=DB::table('pariwisata_hotel')->where('status', '=', 'Accepted')->paginate(10);
         
         $jumlahkamar=0;
         foreach ($tbl34 as $tabel34){
@@ -26028,7 +25997,6 @@ public function pariwisata1(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -26045,7 +26013,7 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -26054,8 +26022,6 @@ public function pariwisata1(Request $request)
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -26075,15 +26041,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -26091,7 +26056,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -27415,7 +27380,6 @@ public function pariwisata1(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -27424,7 +27388,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -27442,8 +27406,7 @@ public function pariwisata1(Request $request)
             $jumlahkamar+=$tabel34->jumlah_kamar;
         }
 
-        $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
+        $tbl35=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->paginate(10);
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -27460,7 +27423,7 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -27468,9 +27431,7 @@ public function pariwisata1(Request $request)
         }
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
-        $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
+        $tbl37=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->paginate(10);
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -27490,15 +27451,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -27506,7 +27466,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -28830,7 +28790,6 @@ public function pariwisata1(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -28839,7 +28798,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -28858,7 +28817,6 @@ public function pariwisata1(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -28875,17 +28833,15 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
             $data35b[] = $tabel35a->kapal_motor;
         }
 
-        $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
+        $tbl36=DB::table('pariwisata_objek_wisata')->where('status', '=', 'Accepted')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -28905,15 +28861,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -28921,7 +28876,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -30245,7 +30200,6 @@ public function pariwisata1(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -30254,7 +30208,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -30273,7 +30227,6 @@ public function pariwisata1(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -30290,7 +30243,7 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -30298,9 +30251,7 @@ public function pariwisata1(Request $request)
         }
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
-        $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
+        $tbl37=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->paginate(10);
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -30320,15 +30271,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
         $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -30336,7 +30286,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }
@@ -31660,7 +31610,6 @@ public function pariwisata1(Request $request)
         //pendidikan dan pariwisata
 
         $tbl33=DB::table('pariwisata_jumlah_wisata')->paginate(10);
-        $tbl33a=DB::table('pariwisata_jumlah_wisata')->where('status', '=', 'Accepted')->get();
         $jumlahpariwisata=0;
         foreach ($tbl33 as $tabel33){
             $jumlahpariwisata+=$tabel33->wisata_asing;
@@ -31669,7 +31618,7 @@ public function pariwisata1(Request $request)
         $categories33 = [];
         $data33 = [];
         $data33a = [];
-        foreach ($tbl33a as $tabel33a){
+        foreach ($tbl33 as $tabel33a){
             $categories33[] = $tabel33a->bulan;
             $data33[] = $tabel33a->wisata_asing*100;
             $data33a[] = $tabel33a->wisata_nusantara;
@@ -31688,7 +31637,6 @@ public function pariwisata1(Request $request)
         }
 
         $tbl35=DB::table('pariwisata_jenis_kapal')->paginate(10);
-        $tbl34a=DB::table('pariwisata_jenis_kapal')->where('status', '=', 'Accepted')->get();
         $jumlahkapal=0;
         foreach ($tbl35 as $tabel35){
             $jumlahkapal+=$tabel35->perahu_tanpa_motor;
@@ -31705,7 +31653,7 @@ public function pariwisata1(Request $request)
         $data35 = [];
         $data35a = [];
         $data35b = [];
-        foreach ($tbl34a as $tabel35a){
+        foreach ($tbl35 as $tabel35a){
             $categories35[] = $tabel35a->kecamatan;
             $data35[] = $tabel35a->perahu_tanpa_motor;
             $data35a[] = $tabel35a->perahu_motor_tempel;
@@ -31714,8 +31662,6 @@ public function pariwisata1(Request $request)
 
         $tbl36=DB::table('pariwisata_objek_wisata')->paginate(10);
         $tbl37=DB::table('pariwisata_kunjungan_kapal')->paginate(10);
-        $tbl37a=DB::table('pariwisata_kunjungan_kapal')->where('status', '=', 'Accepted')->get();
-       
         $jumlahkunjungan=0;
         foreach ($tbl37 as $tabel37){
             $jumlahkunjungan+=$tabel37->jumlah_kapal;
@@ -31735,15 +31681,14 @@ public function pariwisata1(Request $request)
         $data34 = [];
         $data34a = [];
         $data34b = [];
-        foreach ($tbl37a as $tabel37a){
+        foreach ($tbl37 as $tabel37a){
             $categories34[] = $tabel37a->kecamatan;
-            $data34[] = $tabel37a->jumlah_kapal;
-            $data34a[] = $tabel37a->jumlah_penumpang;
-            $data34b[] = $tabel37a->jumlah_barang;
+            $data34[] = $tabel37a->jumlah_kapal*10;
+            $data34a[] = $tabel37a->jumlah_penumpang*10;
+            $data34b[] = $tabel37a->jumlah_barang*10;
         }
 
-        $tbl38=DB::table('pariwisata_restoran')->paginate(10);
-        $tbl38a=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->get();
+        $tbl38=DB::table('pariwisata_restoran')->where('status', '=', 'Accepted')->paginate(10);
         $jumlahrestoran=0;
         foreach ($tbl38 as $tabel38){
             $jumlahrestoran+=$tabel38->jumlah;
@@ -31751,7 +31696,7 @@ public function pariwisata1(Request $request)
 
         $categories38 = [];
         $data38 = [];
-        foreach ($tbl38a as $tabel38a){
+        foreach ($tbl38 as $tabel38a){
             $categories38[] = $tabel38a->kecamatan;
             $data38[] = $tabel38a->jumlah;
         }

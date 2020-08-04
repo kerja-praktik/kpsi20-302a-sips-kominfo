@@ -828,11 +828,11 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
-        }
+        } 
         $jumlah_perempuan=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_perempuan+=$tabel21->perempuan;
@@ -851,7 +851,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -883,7 +883,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -2374,7 +2374,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -2397,7 +2397,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -2429,7 +2429,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -3922,7 +3922,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -3945,7 +3945,7 @@ class KependudukanController extends Controller
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -3977,7 +3977,7 @@ class KependudukanController extends Controller
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -5661,7 +5661,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;
@@ -5693,7 +5693,7 @@ public function kependudukan1(Request $request)
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -7184,7 +7184,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -7239,7 +7239,7 @@ public function kependudukan1(Request $request)
         
         
         //tenaga kerja
-        $tbl23=DB::table('kependudukan_tenaga_kerja')->get();
+        $tbl23=DB::table('kependudukan_tenaga_kerja')->paginate(10);
         $categories23 = [];
         $data23 = [];
         $data23a = [];
@@ -8732,7 +8732,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan dan kesehataan
-        $tbl21=DB::table('kependudukan_jumlah_penduduk')->get();
+        $tbl21=DB::table('kependudukan_jumlah_penduduk')->paginate(10);
         $jumlah_laki_laki=0;
         foreach ($tbl21 as $tabel21){
             $jumlah_laki_laki+=$tabel21->laki_laki;
@@ -8755,7 +8755,7 @@ public function kependudukan1(Request $request)
         }
 
         //kependudukan jumlah akta 
-        $tbl22=DB::table('kependudukan_jumlah_akta')->get();
+        $tbl22=DB::table('kependudukan_jumlah_akta')->paginate(10);
         $jumlah_kelahiran=0;
         foreach ($tbl22 as $tabel22){
             $jumlah_kelahiran+=$tabel22->akta_kelahiran;

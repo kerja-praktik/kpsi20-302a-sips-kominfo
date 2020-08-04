@@ -77,6 +77,8 @@ use App\Model_pegawai_menurut_golongan;
 use App\Model_pegawai_menurut_pendidikan;
 use App\Model_pegawai_yang_pindah_pensiun;
 
+use App\ketapang;
+
 
 use App\Http\Controllers\PemerintahanController;
 
